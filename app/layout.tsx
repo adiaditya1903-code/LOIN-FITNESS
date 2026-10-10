@@ -15,12 +15,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "DITO FITNESS | BUILD YOUR STRONGEST VERSION",
-  description: "Train with purpose. Track your progress. Transform your body and lifestyle with DITO FITNESS — Premium Training Club & Futuristic Fitness Platform.",
-  keywords: ["gym", "fitness", "strength training", "personal trainer", "bodybuilding", "fat loss", "DITO FITNESS"],
+  title: "FOREVER FITNESS | BUILD YOUR BEST SELF",
+  description: "Train harder, get stronger, and transform your lifestyle with expert coaching and personalized fitness and diet programs at FOREVER FITNESS Bagalkot.",
+  keywords: ["FOREVER FITNESS", "Forever Fitness Gym", "Bagalkot Gym", "Almatti to Bagalkot", "fitness", "bodybuilding", "strength training", "personal trainer", "Karnataka gym"],
   openGraph: {
-    title: "DITO FITNESS | BUILD YOUR STRONGEST VERSION",
-    description: "Premium Fitness Club & Futuristic Training Platform.",
+    title: "FOREVER FITNESS | BUILD YOUR BEST SELF",
+    description: "Train harder, get stronger, and transform your lifestyle with expert coaching and personalized fitness programs at FOREVER FITNESS Bagalkot.",
     type: "website",
   },
 };
@@ -32,10 +32,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable} dark scroll-smooth`}>
-      <body className="min-h-screen bg-[#060709] text-[#F8FAFC] font-sans antialiased selection:bg-[#10FFA0] selection:text-[#060709]">
+      <body className="min-h-screen bg-[#07080A] text-[#F8FAFC] font-sans antialiased selection:bg-[#FF5500] selection:text-white">
         {children}
       </body>
     </html>
   );
 }
-

@@ -65,7 +65,7 @@ export const FACILITIES: FacilityZone[] = [
     name: "High-Tech Cardio",
     tag: "Bio-Telemetry & Endurance",
     subtitle: "Interactive telemetry consoles with live heart-rate sync",
-    description: "Curved manual woodway treadmills, Concept2 PM5 Rowers, SkiErgs, and Wattbikes connected to your personal DITO telemetry profile for real-time output tracking.",
+    description: "Curved manual woodway treadmills, Concept2 PM5 Rowers, SkiErgs, and Wattbikes connected to your personal FOREVER telemetry profile for real-time output tracking.",
     specs: {
       area: "2,000 sq.ft",
       equipmentCount: "35 Machines",

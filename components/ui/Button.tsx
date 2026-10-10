@@ -22,16 +22,16 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
     const variantStyles = {
       primary:
-        "bg-gradient-to-r from-[#00F08B] to-[#00D488] text-[#08090D] hover:from-[#15FFA0] hover:to-[#00F08B] shadow-[0_4px_20px_rgba(0,240,139,0.25)] hover:shadow-[0_6px_28px_rgba(0,240,139,0.4)] border border-[#00F08B]/40 hover:-translate-y-0.5",
+        "bg-gradient-to-r from-[#FF5500] to-[#FF3D00] text-white hover:from-[#FF6A00] hover:to-[#FF5500] shadow-[0_4px_25px_rgba(255,85,0,0.45)] hover:shadow-[0_6px_35px_rgba(255,85,0,0.65)] border border-[#FF5500]/40 hover:-translate-y-0.5",
       secondary:
-        "bg-gradient-to-b from-white to-[#E2E8F0] text-[#08090D] hover:from-white hover:to-white shadow-md hover:-translate-y-0.5",
+        "bg-gradient-to-b from-white to-[#E2E8F0] text-[#07080A] hover:from-white hover:to-white shadow-md hover:-translate-y-0.5",
       outline:
-        "bg-transparent text-[#F8FAFC] border border-white/15 hover:border-[#00F08B]/60 hover:text-[#00F08B] hover:bg-[#00F08B]/5 hover:-translate-y-0.5",
+        "bg-transparent text-[#F8FAFC] border border-white/15 hover:border-[#FF5500]/60 hover:text-[#FF5500] hover:bg-[#FF5500]/5 hover:-translate-y-0.5",
       ghost: "bg-transparent text-slate-300 hover:text-white hover:bg-white/[0.06]",
       danger: "bg-red-500/15 text-red-400 border border-red-500/30 hover:bg-red-500/25",
     };
 
-    const glowStyle = glow ? "shadow-[0_0_28px_rgba(0,240,139,0.35)]" : "";
+    const glowStyle = glow ? "shadow-[0_0_28px_rgba(255,85,0,0.45)]" : "";
 
     return (
       <button
@@ -46,5 +46,3 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 );
 
 Button.displayName = "Button";
-
-

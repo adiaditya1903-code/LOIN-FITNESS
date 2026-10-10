@@ -159,7 +159,7 @@ export default function EquipmentLabCanvas({
     keyLight.position.set(6, 7, 5);
     scene.add(keyLight);
 
-    const rimLight = new THREE.DirectionalLight(0xD7FF00, 2.2);
+    const rimLight = new THREE.DirectionalLight(0xff5500, 2.2);
     rimLight.position.set(-5, -2, -4);
     scene.add(rimLight);
 
@@ -180,7 +180,7 @@ export default function EquipmentLabCanvas({
 
     // Glowing rim ring on pedestal
     const ringGeo = new THREE.TorusGeometry(3.02, 0.04, 16, 64);
-    const ringMat = new THREE.MeshBasicMaterial({ color: 0xD7FF00 });
+    const ringMat = new THREE.MeshBasicMaterial({ color: 0xff5500 });
     const ring = new THREE.Mesh(ringGeo, ringMat);
     ring.rotation.x = Math.PI / 2;
     ring.position.y = -2.14;
@@ -290,7 +290,7 @@ export default function EquipmentLabCanvas({
   if (!hasWebGL) {
     return (
       <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-[#171717] rounded-2xl border border-white/10">
-        <p className="text-sm font-semibold text-[#D7FF00]">Equipment 3D Lab</p>
+        <p className="text-sm font-semibold text-[#FF5500]">Equipment 3D Lab</p>
         <p className="text-xs text-[#A3A3A3] mt-1">WebGL acceleration not detected</p>
       </div>
     );

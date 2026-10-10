@@ -68,10 +68,10 @@ export function createProceduralDumbbell(): THREE.Group {
   });
 
   const accentRingMaterial = new THREE.MeshStandardMaterial({
-    color: 0x10ffa0,
+    color: 0xff5500,
     metalness: 0.8,
     roughness: 0.2,
-    emissive: 0x10ffa0,
+    emissive: 0xff5500,
     emissiveIntensity: 0.2,
   });
 
@@ -159,10 +159,10 @@ export function createProceduralBarbell(): THREE.Group {
   });
 
   const plateMaterial25 = new THREE.MeshStandardMaterial({
-    color: 0x10ffa0,
+    color: 0xff5500,
     metalness: 0.7,
     roughness: 0.3,
-    emissive: 0x10ffa0,
+    emissive: 0xff5500,
     emissiveIntensity: 0.15,
   });
 
@@ -249,10 +249,10 @@ export function createProceduralKettlebell(): THREE.Group {
   });
 
   const bandMaterial = new THREE.MeshStandardMaterial({
-    color: 0x10ffa0,
+    color: 0xff5500,
     metalness: 0.85,
     roughness: 0.2,
-    emissive: 0x10ffa0,
+    emissive: 0xff5500,
     emissiveIntensity: 0.2,
   });
 
@@ -315,10 +315,10 @@ export function createProceduralWeightPlate(): THREE.Group {
   });
 
   const accentRimMaterial = new THREE.MeshStandardMaterial({
-    color: 0x10ffa0,
+    color: 0xff5500,
     metalness: 0.85,
     roughness: 0.25,
-    emissive: 0x10ffa0,
+    emissive: 0xff5500,
     emissiveIntensity: 0.2,
   });
 

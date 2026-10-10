@@ -103,19 +103,19 @@ export default function StatsSection() {
       className="relative py-20 bg-[#0B0D14] border-y border-white/[0.08]"
     >
       {/* Subtle glow highlight */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#00F08B]/[0.025] to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#FF5500]/[0.035] to-transparent pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {STATS.map((stat) => (
             <div
               key={stat.id}
-              className="flex flex-col items-center sm:items-start p-6 rounded-3xl bg-[#0E121B] border border-white/[0.08] hover:border-[#00F08B]/40 transition-all duration-300 group shadow-xl hover:-translate-y-1"
+              className="flex flex-col items-center sm:items-start p-6 rounded-3xl bg-[#0E121B] border border-white/[0.08] hover:border-[#FF5500]/50 transition-all duration-300 group shadow-xl hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(255,85,0,0.1)]"
             >
               {/* Counter Value */}
-              <div className="text-4xl sm:text-5xl lg:text-6xl font-black font-space tracking-tight text-white mb-2 flex items-baseline group-hover:text-[#00F08B] transition-colors">
+              <div className="text-4xl sm:text-5xl lg:text-6xl font-black font-space tracking-tight text-white mb-2 flex items-baseline group-hover:text-[#FF5500] transition-colors">
                 <span>{counts[stat.id]}</span>
-                <span className="text-[#00F08B] text-2xl sm:text-3xl ml-1">
+                <span className="text-[#FF5500] text-2xl sm:text-3xl ml-1">
                   {stat.suffix}
                 </span>
               </div>

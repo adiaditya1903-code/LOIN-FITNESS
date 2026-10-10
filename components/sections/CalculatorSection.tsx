@@ -56,7 +56,7 @@ export default function CalculatorSection() {
       return {
         plan: MEMBERSHIP_PLANS[1], // Pro
         matchScore: 95,
-        reasoning: "DITO PRO gives you full progressive workout plans, bi-weekly telemetry tracking, and coach guidance to sustain progressive overload.",
+        reasoning: "FOREVER PRO gives you full progressive workout plans, bi-weekly telemetry tracking, and coach guidance to sustain progressive overload.",
         suggestedSchedule: `${frequency} upper/lower or push/pull/legs split`,
       };
     } else {
@@ -97,7 +97,7 @@ export default function CalculatorSection() {
     if (val < 18.5) {
       return { label: "Underweight", color: "text-sky-400", bg: "bg-sky-500", border: "border-sky-500/30", range: "< 18.5" };
     } else if (val <= 24.9) {
-      return { label: "Normal Weight", color: "text-[#00F08B]", bg: "bg-[#00F08B]", border: "border-[#00F08B]/30", range: "18.5 – 24.9" };
+      return { label: "Normal Weight", color: "text-[#FF5500]", bg: "bg-[#FF5500]", border: "border-[#FF5500]/30", range: "18.5 – 24.9" };
     } else if (val <= 29.9) {
       return { label: "Overweight", color: "text-amber-400", bg: "bg-amber-500", border: "border-amber-500/30", range: "25.0 – 29.9" };
     } else {
@@ -116,17 +116,17 @@ export default function CalculatorSection() {
     <section id="calculator" className="py-24 bg-[#08090D] border-t border-white/[0.08] relative scroll-mt-12">
       <div id="bmi" className="scroll-mt-24" />
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#00F08B]/[0.03] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#FF5500]/[0.035] rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-10">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white font-space">
-            PERSONAL DETAILS & <span className="text-[#00F08B]">PLAN CALCULATOR.</span>
+            PERSONAL DETAILS & <span className="text-[#FF5500]">PLAN CALCULATOR.</span>
           </h2>
           <p className="text-xs sm:text-sm text-slate-300 mt-2">
-            Compute your baseline biometrics or determine your optimal DITO training membership tier.
+            Compute your baseline biometrics or determine your optimal FOREVER training membership tier.
           </p>
 
           {/* Suite Tab Switcher */}
@@ -136,7 +136,7 @@ export default function CalculatorSection() {
               onClick={() => setActiveSuiteTab("plan-matcher")}
               className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                 activeSuiteTab === "plan-matcher"
-                  ? "bg-gradient-to-r from-[#00F08B] to-[#00D488] text-[#08090D] shadow-md"
+                  ? "bg-gradient-to-r from-[#FF5500] to-[#FF3D00] text-white shadow-md shadow-[#FF5500]/25"
                   : "text-slate-400 hover:text-white"
               }`}
             >
@@ -149,7 +149,7 @@ export default function CalculatorSection() {
               onClick={() => setActiveSuiteTab("bmi-screener")}
               className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                 activeSuiteTab === "bmi-screener"
-                  ? "bg-gradient-to-r from-[#00F08B] to-[#00D488] text-[#08090D] shadow-md"
+                  ? "bg-gradient-to-r from-[#FF5500] to-[#FF3D00] text-white shadow-md shadow-[#FF5500]/25"
                   : "text-slate-400 hover:text-white"
               }`}
             >
@@ -169,7 +169,7 @@ export default function CalculatorSection() {
                 {/* Question 1: Goal */}
                 <div>
                   <label className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-200 mb-3">
-                    <Target className="w-4 h-4 text-[#00F08B]" />
+                    <Target className="w-4 h-4 text-[#FF5500]" />
                     <span>1. What is your primary training goal?</span>
                   </label>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
@@ -181,8 +181,8 @@ export default function CalculatorSection() {
                           onClick={() => setGoal(g)}
                           className={`p-3 rounded-xl text-xs font-semibold transition-all cursor-pointer text-left border ${
                             goal === g
-                              ? "bg-[#00F08B]/15 border-[#00F08B] text-white shadow-[0_0_15px_rgba(0,240,139,0.15)]"
-                              : "bg-[#121724] border-white/5 text-slate-300 hover:border-white/20 hover:text-white"
+                              ? "bg-[#FF5500]/15 border-[#FF5500] text-white shadow-[0_0_15px_rgba(255,85,0,0.2)]"
+                              : "bg-[#12151F] border-white/5 text-slate-300 hover:border-white/20 hover:text-white"
                           }`}
                         >
                           {g}
@@ -195,7 +195,7 @@ export default function CalculatorSection() {
                 {/* Question 2: Frequency */}
                 <div>
                   <label className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-200 mb-3">
-                    <Calendar className="w-4 h-4 text-[#00F08B]" />
+                    <Calendar className="w-4 h-4 text-[#FF5500]" />
                     <span>2. Weekly Training Commitment</span>
                   </label>
                   <div className="grid grid-cols-3 gap-2.5">
@@ -206,8 +206,8 @@ export default function CalculatorSection() {
                         onClick={() => setFrequency(f)}
                         className={`p-3 rounded-xl text-xs font-semibold transition-all cursor-pointer text-center border ${
                           frequency === f
-                            ? "bg-[#00F08B]/15 border-[#00F08B] text-white shadow-[0_0_15px_rgba(0,240,139,0.15)]"
-                            : "bg-[#121724] border-white/5 text-slate-300 hover:border-white/20 hover:text-white"
+                            ? "bg-[#FF5500]/15 border-[#FF5500] text-white shadow-[0_0_15px_rgba(255,85,0,0.2)]"
+                            : "bg-[#12151F] border-white/5 text-slate-300 hover:border-white/20 hover:text-white"
                         }`}
                       >
                         {f}
@@ -219,7 +219,7 @@ export default function CalculatorSection() {
                 {/* Question 3: Coaching Support */}
                 <div>
                   <label className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-200 mb-3">
-                    <UserCheck className="w-4 h-4 text-[#00F08B]" />
+                    <UserCheck className="w-4 h-4 text-[#FF5500]" />
                     <span>3. Coaching & Guidance Level</span>
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
@@ -230,8 +230,8 @@ export default function CalculatorSection() {
                         onClick={() => setCoaching(c)}
                         className={`p-3 rounded-xl text-xs font-semibold transition-all cursor-pointer text-center border ${
                           coaching === c
-                            ? "bg-[#00F08B]/15 border-[#00F08B] text-white shadow-[0_0_15px_rgba(0,240,139,0.15)]"
-                            : "bg-[#121724] border-white/5 text-slate-300 hover:border-white/20 hover:text-white"
+                            ? "bg-[#FF5500]/15 border-[#FF5500] text-white shadow-[0_0_15px_rgba(255,85,0,0.2)]"
+                            : "bg-[#12151F] border-white/5 text-slate-300 hover:border-white/20 hover:text-white"
                         }`}
                       >
                         {c}
@@ -242,15 +242,15 @@ export default function CalculatorSection() {
               </div>
 
               {/* Right Column: Dynamic Recommendation */}
-              <div className="lg:col-span-5 flex flex-col justify-between p-6 sm:p-7 rounded-2xl bg-[#121724] border border-[#00F08B]/30 shadow-xl relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#00F08B]/[0.08] rounded-full blur-[40px] pointer-events-none" />
+              <div className="lg:col-span-5 flex flex-col justify-between p-6 sm:p-7 rounded-2xl bg-[#12151F] border border-[#FF5500]/30 shadow-xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#FF5500]/[0.08] rounded-full blur-[40px] pointer-events-none" />
 
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-[11px] font-bold uppercase tracking-widest text-[#00F08B]">
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-[#FF5500]">
                       RECOMMENDED TIER
                     </span>
-                    <Badge variant="lime">{recommendation.matchScore}% MATCH</Badge>
+                    <Badge variant="orange">{recommendation.matchScore}% MATCH</Badge>
                   </div>
 
                   <h3 className="text-2xl sm:text-3xl font-black uppercase text-white font-space tracking-tight mb-2">
@@ -280,7 +280,7 @@ export default function CalculatorSection() {
                   <ul className="space-y-2 mb-6">
                     {recommendation.plan.features.slice(0, 4).map((f, i) => (
                       <li key={i} className="flex items-center gap-2 text-xs text-slate-300">
-                        <CheckCircle2 className="w-4 h-4 text-[#00F08B] shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-[#FF5500] shrink-0" />
                         <span>{f}</span>
                       </li>
                     ))}
@@ -304,13 +304,13 @@ export default function CalculatorSection() {
           <div className="bg-[#0E121B] border border-white/[0.08] rounded-3xl p-6 sm:p-10 shadow-2xl transition-all duration-300">
             {/* Unit Toggle Bar */}
             <div className="flex justify-center mb-8">
-              <div className="inline-flex items-center p-1 rounded-xl bg-[#121724] border border-white/[0.08]">
+              <div className="inline-flex items-center p-1 rounded-xl bg-[#12151F] border border-white/[0.08]">
                 <button
                   type="button"
                   onClick={() => setUnitSystem("metric")}
                   className={`px-4 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                     unitSystem === "metric"
-                      ? "bg-[#00F08B] text-[#08090D] shadow-sm"
+                      ? "bg-[#FF5500] text-white shadow-sm"
                       : "text-slate-400 hover:text-white"
                   }`}
                 >
@@ -321,7 +321,7 @@ export default function CalculatorSection() {
                   onClick={() => setUnitSystem("imperial")}
                   className={`px-4 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                     unitSystem === "imperial"
-                      ? "bg-[#00F08B] text-[#08090D] shadow-sm"
+                      ? "bg-[#FF5500] text-white shadow-sm"
                       : "text-slate-400 hover:text-white"
                   }`}
                 >
@@ -339,7 +339,7 @@ export default function CalculatorSection() {
                 <div>
                   <div className="flex justify-between items-center text-xs font-bold uppercase text-slate-300 mb-2">
                     <span className="flex items-center gap-1.5">
-                      <Ruler className="w-4 h-4 text-[#00F08B]" /> Height
+                      <Ruler className="w-4 h-4 text-[#FF5500]" /> Height
                     </span>
                     <span className="text-white font-mono font-bold text-sm">
                       {unitSystem === "metric" ? `${heightCm} cm` : `${heightFt} ft ${heightIn} in`}
@@ -353,7 +353,7 @@ export default function CalculatorSection() {
                       max={220}
                       value={heightCm}
                       onChange={(e) => setHeightCm(Number(e.target.value))}
-                      className="w-full accent-[#00F08B] h-2 bg-[#121724] rounded-lg cursor-pointer"
+                      className="w-full accent-[#FF5500] h-2 bg-[#12151F] rounded-lg cursor-pointer"
                     />
                   ) : (
                     <div className="grid grid-cols-2 gap-3">
@@ -365,7 +365,7 @@ export default function CalculatorSection() {
                           max={7}
                           value={heightFt}
                           onChange={(e) => setHeightFt(Number(e.target.value))}
-                          className="w-full px-3 py-2 rounded-xl bg-[#121724] border border-white/10 text-white text-xs focus:border-[#00F08B] focus:outline-none"
+                          className="w-full px-3 py-2 rounded-xl bg-[#12151F] border border-white/10 text-white text-xs focus:border-[#FF5500] focus:outline-none"
                         />
                       </div>
                       <div>
@@ -376,7 +376,7 @@ export default function CalculatorSection() {
                           max={11}
                           value={heightIn}
                           onChange={(e) => setHeightIn(Number(e.target.value))}
-                          className="w-full px-3 py-2 rounded-xl bg-[#121724] border border-white/10 text-white text-xs focus:border-[#00F08B] focus:outline-none"
+                          className="w-full px-3 py-2 rounded-xl bg-[#12151F] border border-white/10 text-white text-xs focus:border-[#FF5500] focus:outline-none"
                         />
                       </div>
                     </div>
@@ -387,7 +387,7 @@ export default function CalculatorSection() {
                 <div>
                   <div className="flex justify-between items-center text-xs font-bold uppercase text-slate-300 mb-2">
                     <span className="flex items-center gap-1.5">
-                      <Scale className="w-4 h-4 text-[#00F08B]" /> Weight
+                      <Scale className="w-4 h-4 text-[#FF5500]" /> Weight
                     </span>
                     <span className="text-white font-mono font-bold text-sm">
                       {unitSystem === "metric" ? `${weightKg} kg` : `${weightLbs} lbs`}
@@ -401,7 +401,7 @@ export default function CalculatorSection() {
                       max={180}
                       value={weightKg}
                       onChange={(e) => setWeightKg(Number(e.target.value))}
-                      className="w-full accent-[#00F08B] h-2 bg-[#121724] rounded-lg cursor-pointer"
+                      className="w-full accent-[#FF5500] h-2 bg-[#12151F] rounded-lg cursor-pointer"
                     />
                   ) : (
                     <input
@@ -410,7 +410,7 @@ export default function CalculatorSection() {
                       max={350}
                       value={weightLbs}
                       onChange={(e) => setWeightLbs(Number(e.target.value))}
-                      className="w-full accent-[#00F08B] h-2 bg-[#121724] rounded-lg cursor-pointer"
+                      className="w-full accent-[#FF5500] h-2 bg-[#12151F] rounded-lg cursor-pointer"
                     />
                   )}
                 </div>
@@ -419,7 +419,7 @@ export default function CalculatorSection() {
                 <div>
                   <div className="flex justify-between items-center text-xs font-bold uppercase text-slate-300 mb-2">
                     <span className="flex items-center gap-1.5">
-                      <User className="w-4 h-4 text-[#00F08B]" /> Age
+                      <User className="w-4 h-4 text-[#FF5500]" /> Age
                     </span>
                     <span className="text-white font-mono font-bold text-sm">{age} years</span>
                   </div>
@@ -429,13 +429,13 @@ export default function CalculatorSection() {
                     max={80}
                     value={age}
                     onChange={(e) => setAge(Number(e.target.value))}
-                    className="w-full accent-[#00F08B] h-2 bg-[#121724] rounded-lg cursor-pointer"
+                    className="w-full accent-[#FF5500] h-2 bg-[#12151F] rounded-lg cursor-pointer"
                   />
                 </div>
 
                 {/* Biometric Readouts Card */}
                 <div className="grid grid-cols-2 gap-3 pt-2">
-                  <div className="p-3.5 rounded-xl bg-[#121724] border border-white/5">
+                  <div className="p-3.5 rounded-xl bg-[#12151F] border border-white/5">
                     <div className="flex items-center gap-1.5 text-slate-400 text-[10px] font-bold uppercase mb-1">
                       <Heart className="w-3.5 h-3.5 text-rose-400" /> Target HR Zone
                     </div>
@@ -444,7 +444,7 @@ export default function CalculatorSection() {
                     </div>
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-[#121724] border border-white/5">
+                  <div className="p-3.5 rounded-xl bg-[#12151F] border border-white/5">
                     <div className="flex items-center gap-1.5 text-slate-400 text-[10px] font-bold uppercase mb-1">
                       <Flame className="w-3.5 h-3.5 text-amber-400" /> Baseline BMR
                     </div>
@@ -457,7 +457,7 @@ export default function CalculatorSection() {
               </div>
 
               {/* Right Column: Score Gauge & Analysis */}
-              <div className="lg:col-span-6 flex flex-col items-center justify-center p-6 sm:p-8 rounded-2xl bg-[#121724] border border-white/10 text-center">
+              <div className="lg:col-span-6 flex flex-col items-center justify-center p-6 sm:p-8 rounded-2xl bg-[#12151F] border border-white/10 text-center">
                 <span className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">
                   ESTIMATED BODY MASS INDEX
                 </span>
@@ -472,7 +472,7 @@ export default function CalculatorSection() {
 
                 {/* Visual Gauge Bar */}
                 <div className="w-full max-w-sm mb-6">
-                  <div className="relative h-3 rounded-full overflow-hidden bg-gradient-to-r from-sky-500 via-[#00F08B] via-amber-500 to-rose-500">
+                  <div className="relative h-3 rounded-full overflow-hidden bg-gradient-to-r from-sky-500 via-[#FF5500] via-amber-500 to-rose-500">
                     <div
                       className="absolute top-0 bottom-0 w-2 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)] -translate-x-1/2 transition-all duration-300"
                       style={{ left: `${gaugePercent}%` }}
@@ -517,5 +517,3 @@ export default function CalculatorSection() {
     </section>
   );
 }
-
-

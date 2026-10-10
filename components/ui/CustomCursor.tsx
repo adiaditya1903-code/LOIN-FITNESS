@@ -107,11 +107,11 @@ export default function CustomCursor() {
       }}
     >
       {cursorVariant === "active" && cursorText ? (
-        <div className="relative -top-4 -left-4 px-2.5 py-1 bg-[#FF5E14] text-white font-space font-bold text-[10px] tracking-wider uppercase rounded-full shadow-[0_0_20px_rgba(255,94,20,0.7)] flex items-center gap-1 border border-white/40">
+        <div className="relative -top-4 -left-4 px-2.5 py-1 bg-[#FF5500] text-white font-space font-bold text-[10px] tracking-wider uppercase rounded-full shadow-[0_0_20px_rgba(255,85,0,0.7)] flex items-center gap-1 border border-white/40">
           <span>{cursorText}</span>
         </div>
       ) : (
-        <div className="relative -top-1.5 -left-1.5 w-3.5 h-3.5 rounded-full bg-[#FF5E14] shadow-[0_0_12px_rgba(255,94,20,0.85)] border border-white/60" />
+        <div className="relative -top-1.5 -left-1.5 w-3.5 h-3.5 rounded-full bg-[#FF5500] shadow-[0_0_12px_rgba(255,85,0,0.85)] border border-white/60" />
       )}
     </div>
   );

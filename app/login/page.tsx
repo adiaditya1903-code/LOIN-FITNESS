@@ -68,7 +68,7 @@ function AuthContent() {
           MockDb.registerNewMember({
             fullName: loginEmail.split("@")[0].toUpperCase() || "ATHLETE",
             email: loginEmail,
-            phone: "+91 98765 00000",
+            phone: "+91 63635 61751",
             planId: "pro",
             billingCycle: "monthly",
           });
@@ -77,15 +77,15 @@ function AuthContent() {
         }
       } else {
         if (
-          loginEmail.toLowerCase() === "admin@ditofitness.com" ||
-          loginEmail.toLowerCase() === "admin@dito.fit" ||
+          loginEmail.toLowerCase() === "admin@foreverfitness.com" ||
+          loginEmail.toLowerCase() === "admin@forever.fit" ||
           loginPassword === "admin123"
         ) {
           setIsLoginLoading(false);
           router.push("/admin");
         } else {
           setIsLoginLoading(false);
-          setLoginError("Invalid credentials. For staff demo, use: admin@ditofitness.com (password: admin123)");
+          setLoginError("Invalid credentials. For staff demo, use: admin@foreverfitness.com (password: admin123)");
         }
       }
     }, 500);
@@ -138,18 +138,18 @@ function AuthContent() {
     MEMBERSHIP_PLANS.find((p) => p.id === selectedPlanId) || MEMBERSHIP_PLANS[1];
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center px-4 py-12 bg-[#08090D] bg-grid-pattern relative">
+    <div className="min-h-screen flex flex-col justify-center items-center px-4 py-12 bg-[#07080A] bg-grid-pattern relative">
       {/* Ambient background glow */}
-      <div className="absolute w-[600px] h-[600px] bg-[#00F08B]/[0.025] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute w-[600px] h-[600px] bg-[#FF5500]/[0.04] rounded-full blur-[160px] pointer-events-none" />
 
       {/* Brand Header */}
       <Link href="/" className="flex items-center gap-3 mb-8 group select-none">
-        <div className="w-10 h-10 rounded-xl bg-[#00F08B] flex items-center justify-center shadow-[0_0_20px_rgba(215,255,0,0.25)] group-hover:scale-105 transition-transform">
-          <Dumbbell className="w-5 h-5 text-[#08090D] rotate-45 stroke-[2.5]" />
+        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#FF5500] to-[#FF3D00] flex items-center justify-center shadow-[0_0_20px_rgba(255,85,0,0.35)] group-hover:scale-105 transition-transform">
+          <Dumbbell className="w-5 h-5 text-white rotate-45 stroke-[2.5]" />
         </div>
         <div className="flex flex-col">
           <span className="text-2xl font-black tracking-tight text-white font-space uppercase">
-            DITO <span className="text-[#00F08B]">FITNESS</span>
+            FOREVER <span className="text-[#FF5500]">FITNESS</span>
           </span>
           <span className="text-[10px] tracking-[0.25em] text-[#A3A3A3] uppercase -mt-1 font-semibold">
             Athletic Portal
@@ -158,16 +158,16 @@ function AuthContent() {
       </Link>
 
       {/* Main Container */}
-      <div className="w-full max-w-xl bg-[#121724] border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl relative z-10">
+      <div className="w-full max-w-xl bg-[#0E121B] border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl relative z-10 backdrop-blur-xl">
 
         {/* Main Tab Switcher: Sign In vs New Membership */}
-        <div className="flex rounded-2xl bg-[#0E121B] border border-white/10 p-1.5 mb-8">
+        <div className="flex rounded-2xl bg-[#07080A] border border-white/10 p-1.5 mb-8">
           <button
             type="button"
             onClick={() => setActiveTab("login")}
             className={`flex-1 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-2 ${
               activeTab === "login"
-                ? "bg-[#00F08B] text-[#08090D] shadow-md"
+                ? "bg-gradient-to-r from-[#FF5500] to-[#FF3D00] text-white shadow-[0_0_15px_rgba(255,85,0,0.35)]"
                 : "text-[#A3A3A3] hover:text-white"
             }`}
           >
@@ -180,7 +180,7 @@ function AuthContent() {
             onClick={() => setActiveTab("register")}
             className={`flex-1 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center justify-center gap-2 ${
               activeTab === "register"
-                ? "bg-[#00F08B] text-[#08090D] shadow-md"
+                ? "bg-gradient-to-r from-[#FF5500] to-[#FF3D00] text-white shadow-[0_0_15px_rgba(255,85,0,0.35)]"
                 : "text-[#A3A3A3] hover:text-white"
             }`}
           >
@@ -193,7 +193,7 @@ function AuthContent() {
         {activeTab === "login" && (
           <div>
             {/* Role Switcher */}
-            <div className="flex rounded-xl bg-[#0E121B] border border-white/10 p-1 mb-6">
+            <div className="flex rounded-xl bg-[#07080A] border border-white/10 p-1 mb-6">
               <button
                 type="button"
                 onClick={() => {
@@ -206,7 +206,7 @@ function AuthContent() {
                     : "text-[#A3A3A3] hover:text-white"
                 }`}
               >
-                <User className="w-3.5 h-3.5 text-[#00F08B]" />
+                <User className="w-3.5 h-3.5 text-[#FF5500]" />
                 <span>Member Access</span>
               </button>
 
@@ -253,10 +253,10 @@ function AuthContent() {
                   <input
                     type="email"
                     required
-                    placeholder={loginRole === "member" ? "alex.mercer@dito.fit" : "admin@ditofitness.com"}
+                    placeholder={loginRole === "member" ? "athlete@foreverfitness.com" : "admin@foreverfitness.com"}
                     value={loginEmail}
                     onChange={(e) => setLoginEmail(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#0E121B] border border-white/10 text-white placeholder:text-neutral-500 focus:border-[#00F08B] focus:outline-none text-sm"
+                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#07080A] border border-white/10 text-white placeholder:text-neutral-500 focus:border-[#FF5500] focus:outline-none text-sm"
                   />
                   <Mail className="w-4 h-4 text-[#A3A3A3] absolute left-3.5 top-1/2 -translate-y-1/2" />
                 </div>
@@ -273,7 +273,7 @@ function AuthContent() {
                     placeholder="••••••••••••"
                     value={loginPassword}
                     onChange={(e) => setLoginPassword(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#0E121B] border border-white/10 text-white placeholder:text-neutral-500 focus:border-[#00F08B] focus:outline-none text-sm"
+                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#07080A] border border-white/10 text-white placeholder:text-neutral-500 focus:border-[#FF5500] focus:outline-none text-sm"
                   />
                   <Lock className="w-4 h-4 text-[#A3A3A3] absolute left-3.5 top-1/2 -translate-y-1/2" />
                 </div>
@@ -281,10 +281,10 @@ function AuthContent() {
 
               <div className="flex items-center justify-between text-xs pt-1">
                 <label className="flex items-center gap-2 text-[#A3A3A3] cursor-pointer">
-                  <input type="checkbox" defaultChecked className="rounded accent-[#00F08B]" />
+                  <input type="checkbox" defaultChecked className="rounded accent-[#FF5500]" />
                   <span>Remember session</span>
                 </label>
-                <span className="text-[#00F08B] hover:underline cursor-pointer">
+                <span className="text-[#FF5500] hover:underline cursor-pointer">
                   Forgot password?
                 </span>
               </div>
@@ -316,9 +316,9 @@ function AuthContent() {
                 <button
                   type="button"
                   onClick={() => setActiveTab("register")}
-                  className="text-[#00F08B] font-bold hover:underline cursor-pointer ml-1"
+                  className="text-[#FF5500] font-bold hover:underline cursor-pointer ml-1"
                 >
-                  Join DITO Fitness
+                  Join FOREVER Fitness
                 </button>
               </p>
             </div>
@@ -341,15 +341,15 @@ function AuthContent() {
               {/* Step 1: Select Plan & Billing */}
               <div>
                 <div className="flex items-center justify-between mb-3">
-                  <label className="text-xs font-bold uppercase tracking-wider text-[#00F08B] font-space">
+                  <label className="text-xs font-bold uppercase tracking-wider text-[#FF5500] font-space">
                     1. Select Tier & Billing
                   </label>
-                  <div className="inline-flex items-center p-0.5 rounded-lg bg-[#0E121B] border border-white/10 text-[10px]">
+                  <div className="inline-flex items-center p-0.5 rounded-lg bg-[#07080A] border border-white/10 text-[10px]">
                     <button
                       type="button"
                       onClick={() => setBillingCycle("monthly")}
                       className={`px-2 py-1 rounded-md font-bold uppercase transition-all ${
-                        billingCycle === "monthly" ? "bg-[#00F08B] text-[#08090D]" : "text-[#A3A3A3]"
+                        billingCycle === "monthly" ? "bg-gradient-to-r from-[#FF5500] to-[#FF3D00] text-white" : "text-[#A3A3A3]"
                       }`}
                     >
                       Monthly
@@ -358,7 +358,7 @@ function AuthContent() {
                       type="button"
                       onClick={() => setBillingCycle("yearly")}
                       className={`px-2 py-1 rounded-md font-bold uppercase transition-all ${
-                        billingCycle === "yearly" ? "bg-[#00F08B] text-[#08090D]" : "text-[#A3A3A3]"
+                        billingCycle === "yearly" ? "bg-gradient-to-r from-[#FF5500] to-[#FF3D00] text-white" : "text-[#A3A3A3]"
                       }`}
                     >
                       Annual (-17%)
@@ -377,14 +377,14 @@ function AuthContent() {
                         onClick={() => setSelectedPlanId(plan.id)}
                         className={`p-3 rounded-2xl border text-left transition-all cursor-pointer ${
                           isSelected
-                            ? "bg-[#00F08B]/15 border-[#00F08B] shadow-[0_0_15px_rgba(215,255,0,0.2)]"
-                            : "bg-[#0E121B] border-white/10 hover:border-white/20"
+                            ? "bg-[#FF5500]/15 border-[#FF5500] shadow-[0_0_15px_rgba(255,85,0,0.25)]"
+                            : "bg-[#07080A] border-white/10 hover:border-white/20"
                         }`}
                       >
                         <div className="text-[11px] font-black uppercase text-white font-space">
                           {plan.name}
                         </div>
-                        <div className="text-xs font-bold text-[#00F08B] mt-0.5 font-space">
+                        <div className="text-xs font-bold text-[#FF5500] mt-0.5 font-space">
                           {formatINR(price)}
                         </div>
                         <div className="text-[9px] text-[#A3A3A3]">
@@ -398,7 +398,7 @@ function AuthContent() {
 
               {/* Step 2: Personal Contact */}
               <div className="space-y-3">
-                <label className="block text-xs font-bold uppercase tracking-wider text-[#00F08B] font-space">
+                <label className="block text-xs font-bold uppercase tracking-wider text-[#FF5500] font-space">
                   2. Athlete Information
                 </label>
 
@@ -409,7 +409,7 @@ function AuthContent() {
                     placeholder="Full Legal Name"
                     value={regData.fullName}
                     onChange={(e) => setRegData({ ...regData, fullName: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-[#0E121B] border border-white/10 text-white placeholder:text-neutral-500 focus:border-[#00F08B] focus:outline-none text-xs sm:text-sm"
+                    className="w-full px-4 py-2.5 rounded-xl bg-[#07080A] border border-white/10 text-white placeholder:text-neutral-500 focus:border-[#FF5500] focus:outline-none text-xs sm:text-sm"
                   />
                 </div>
 
@@ -421,7 +421,7 @@ function AuthContent() {
                       placeholder="Email Address"
                       value={regData.email}
                       onChange={(e) => setRegData({ ...regData, email: e.target.value })}
-                      className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-[#0E121B] border border-white/10 text-white placeholder:text-neutral-500 focus:border-[#00F08B] focus:outline-none text-xs sm:text-sm"
+                      className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-[#07080A] border border-white/10 text-white placeholder:text-neutral-500 focus:border-[#FF5500] focus:outline-none text-xs sm:text-sm"
                     />
                     <Mail className="w-3.5 h-3.5 text-[#A3A3A3] absolute left-3 top-1/2 -translate-y-1/2" />
                   </div>
@@ -433,7 +433,7 @@ function AuthContent() {
                       placeholder="Phone Number"
                       value={regData.phone}
                       onChange={(e) => setRegData({ ...regData, phone: e.target.value })}
-                      className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-[#0E121B] border border-white/10 text-white placeholder:text-neutral-500 focus:border-[#00F08B] focus:outline-none text-xs sm:text-sm"
+                      className="w-full pl-9 pr-3 py-2.5 rounded-xl bg-[#07080A] border border-white/10 text-white placeholder:text-neutral-500 focus:border-[#FF5500] focus:outline-none text-xs sm:text-sm"
                     />
                     <Phone className="w-3.5 h-3.5 text-[#A3A3A3] absolute left-3 top-1/2 -translate-y-1/2" />
                   </div>
@@ -445,14 +445,14 @@ function AuthContent() {
                     placeholder="Set Account Password"
                     value={regData.password}
                     onChange={(e) => setRegData({ ...regData, password: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-[#0E121B] border border-white/10 text-white placeholder:text-neutral-500 focus:border-[#00F08B] focus:outline-none text-xs sm:text-sm"
+                    className="w-full px-4 py-2.5 rounded-xl bg-[#07080A] border border-white/10 text-white placeholder:text-neutral-500 focus:border-[#FF5500] focus:outline-none text-xs sm:text-sm"
                   />
                 </div>
               </div>
 
               {/* Step 3: Biometric Baseline */}
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-[#00F08B] mb-2.5 font-space">
+                <label className="block text-xs font-bold uppercase tracking-wider text-[#FF5500] mb-2.5 font-space">
                   3. Biometric Baseline & Goal
                 </label>
 
@@ -463,7 +463,7 @@ function AuthContent() {
                       type="number"
                       value={regData.heightCm}
                       onChange={(e) => setRegData({ ...regData, heightCm: Number(e.target.value) })}
-                      className="w-full px-3 py-2 rounded-xl bg-[#0E121B] border border-white/10 text-white text-xs focus:border-[#00F08B] focus:outline-none"
+                      className="w-full px-3 py-2 rounded-xl bg-[#07080A] border border-white/10 text-white text-xs focus:border-[#FF5500] focus:outline-none"
                     />
                   </div>
 
@@ -473,7 +473,7 @@ function AuthContent() {
                       type="number"
                       value={regData.weightKg}
                       onChange={(e) => setRegData({ ...regData, weightKg: Number(e.target.value) })}
-                      className="w-full px-3 py-2 rounded-xl bg-[#0E121B] border border-white/10 text-white text-xs focus:border-[#00F08B] focus:outline-none"
+                      className="w-full px-3 py-2 rounded-xl bg-[#07080A] border border-white/10 text-white text-xs focus:border-[#FF5500] focus:outline-none"
                     />
                   </div>
 
@@ -482,7 +482,7 @@ function AuthContent() {
                     <select
                       value={regData.fitnessGoal}
                       onChange={(e) => setRegData({ ...regData, fitnessGoal: e.target.value })}
-                      className="w-full px-2 py-2 rounded-xl bg-[#0E121B] border border-white/10 text-white text-xs focus:border-[#00F08B] focus:outline-none cursor-pointer"
+                      className="w-full px-2 py-2 rounded-xl bg-[#07080A] border border-white/10 text-white text-xs focus:border-[#FF5500] focus:outline-none cursor-pointer"
                     >
                       <option value="Hypertrophy & Strength">Hypertrophy</option>
                       <option value="Fat Loss & Tone">Fat Loss</option>
@@ -514,7 +514,7 @@ function AuthContent() {
                 <button
                   type="button"
                   onClick={() => setActiveTab("login")}
-                  className="text-[#00F08B] font-bold hover:underline cursor-pointer ml-1"
+                  className="text-[#FF5500] font-bold hover:underline cursor-pointer ml-1"
                 >
                   Sign In
                 </button>
@@ -527,7 +527,7 @@ function AuthContent() {
 
       <div className="mt-8 text-center">
         <Link href="/" className="text-xs text-[#A3A3A3] hover:text-white transition-colors">
-          ← Back to DITO FITNESS Homepage
+          ← Back to FOREVER FITNESS Homepage
         </Link>
       </div>
     </div>
@@ -538,7 +538,7 @@ export default function LoginPage() {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen flex items-center justify-center bg-[#08090D] text-white text-sm">
+        <div className="min-h-screen flex items-center justify-center bg-[#07080A] text-white text-sm">
           Loading Authentication Portal...
         </div>
       }

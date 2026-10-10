@@ -27,7 +27,6 @@ import {
   ShieldCheck,
   Zap,
 } from "lucide-react";
-import confetti from "canvas-confetti";
 
 export default function MemberDashboard() {
   const [member, setMember] = useState<MemberProfile | null>(null);
@@ -45,8 +44,8 @@ export default function MemberDashboard() {
 
   if (!member) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#08090D] text-white text-sm">
-        <div className="w-6 h-6 border-2 border-[#00F08B] border-t-transparent rounded-full animate-spin mr-3" />
+      <div className="min-h-screen flex items-center justify-center bg-[#07080A] text-white text-sm">
+        <div className="w-6 h-6 border-2 border-[#FF5500] border-t-transparent rounded-full animate-spin mr-3" />
         Loading Member Telemetry...
       </div>
     );
@@ -64,16 +63,16 @@ export default function MemberDashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-[#08090D] text-white flex flex-col">
+    <div className="min-h-screen bg-[#07080A] text-white flex flex-col selection:bg-[#FF5500] selection:text-white">
       {/* Top Navbar */}
-      <header className="sticky top-0 z-30 bg-[#08090D]/90 backdrop-blur-xl border-b border-white/[0.08] px-4 sm:px-8 py-3.5 flex items-center justify-between">
+      <header className="sticky top-0 z-30 bg-[#07080A]/90 backdrop-blur-xl border-b border-white/[0.08] px-4 sm:px-8 py-3.5 flex items-center justify-between">
         <div className="flex items-center gap-4">
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#00F08B] to-[#00A862] flex items-center justify-center">
-              <Dumbbell className="w-4 h-4 text-[#08090D] rotate-45" />
+            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#FF5500] to-[#FF3D00] flex items-center justify-center shadow-[0_0_15px_rgba(255,85,0,0.3)]">
+              <Dumbbell className="w-4 h-4 text-white rotate-45 stroke-[2.5]" />
             </div>
             <span className="text-lg font-black tracking-wider text-white font-space">
-              DITO <span className="text-[#00F08B]">PORTAL</span>
+              FOREVER <span className="text-[#FF5500]">PORTAL</span>
             </span>
           </Link>
           <span className="hidden sm:inline-block text-xs text-slate-400 font-mono">
@@ -85,7 +84,7 @@ export default function MemberDashboard() {
           <button
             type="button"
             onClick={() => setQrModalOpen(true)}
-            className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#00F08B]/10 border border-[#00F08B]/30 text-[#00F08B] text-xs font-bold hover:bg-[#00F08B]/20 transition-all cursor-pointer"
+            className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#FF5500]/10 border border-[#FF5500]/30 text-[#FF5500] text-xs font-bold hover:bg-[#FF5500]/20 transition-all cursor-pointer shadow-[0_0_12px_rgba(255,85,0,0.15)]"
           >
             <QrCode className="w-4 h-4" />
             <span>Digital Pass</span>
@@ -108,15 +107,15 @@ export default function MemberDashboard() {
         
         {/* Welcome Banner */}
         <div className="relative rounded-3xl bg-gradient-to-r from-[#0E121B] via-[#121724] to-[#0E121B] border border-white/[0.08] p-6 sm:p-8 overflow-hidden shadow-2xl">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-[#00F08B]/[0.05] rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[#FF5500]/[0.05] rounded-full blur-[100px] pointer-events-none" />
 
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
             <div>
               <div className="flex items-center gap-2.5 mb-2">
-                <span className="text-xs font-bold uppercase tracking-widest text-[#00F08B]">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#FF5500]">
                   ATHLETE STATUS: ACTIVE
                 </span>
-                <span className="w-2 h-2 rounded-full bg-[#00F08B] animate-pulse" />
+                <span className="w-2 h-2 rounded-full bg-[#FF5500] animate-pulse" />
               </div>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black uppercase text-white font-space tracking-tight">
                 Welcome back, {member.fullName}
@@ -141,7 +140,7 @@ export default function MemberDashboard() {
               <button
                 type="button"
                 onClick={() => setRenewModalOpen(true)}
-                className="px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-white/[0.05] border border-white/10 hover:border-[#00F08B]/40 text-slate-200 transition-all cursor-pointer"
+                className="px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-white/[0.05] border border-white/10 hover:border-[#FF5500]/40 hover:text-[#FF5500] text-slate-200 transition-all cursor-pointer"
               >
                 Extend Membership
               </button>
@@ -154,7 +153,7 @@ export default function MemberDashboard() {
               <span className="text-[11px] uppercase font-bold text-slate-400 tracking-wider block mb-0.5">
                 Current Tier
               </span>
-              <span className="text-lg font-black text-[#00F08B] font-space">
+              <span className="text-lg font-black text-[#FF5500] font-space">
                 {member.membershipPlanName}
               </span>
             </div>
@@ -173,7 +172,7 @@ export default function MemberDashboard() {
                 Attendance Streak
               </span>
               <span className="text-lg font-black text-white font-space flex items-center gap-1.5">
-                <Flame className="w-4 h-4 text-[#00F08B]" />
+                <Flame className="w-4 h-4 text-[#FF5500]" />
                 {member.attendanceStreak} Days
               </span>
             </div>
@@ -203,7 +202,7 @@ export default function MemberDashboard() {
               onClick={() => setActiveTab(tab.id as typeof activeTab)}
               className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap ${
                 activeTab === tab.id
-                  ? "bg-gradient-to-r from-[#00F08B] to-[#00D488] text-[#08090D] shadow-md"
+                  ? "bg-gradient-to-r from-[#FF5500] to-[#FF3D00] text-white shadow-[0_0_15px_rgba(255,85,0,0.35)]"
                   : "text-slate-400 hover:text-white"
               }`}
             >
@@ -223,14 +222,14 @@ export default function MemberDashboard() {
               <div className="p-6 sm:p-7 rounded-3xl bg-[#0E121B] border border-white/[0.08]">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#00F08B]">
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#FF5500]">
                       PROGRAMMED SESSION
                     </span>
                     <h3 className="text-xl font-black text-white uppercase font-space mt-0.5">
                       Chest + Triceps Progressive Overload
                     </h3>
                   </div>
-                  <Badge variant="lime">Phase 2 / Week 4</Badge>
+                  <Badge variant="orange">Phase 2 / Week 4</Badge>
                 </div>
 
                 <p className="text-xs text-slate-300 leading-relaxed mb-6">
@@ -249,14 +248,14 @@ export default function MemberDashboard() {
                       className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 flex items-center justify-between text-xs"
                     >
                       <div className="flex items-center gap-3">
-                        <span className="w-5 h-5 rounded-md bg-[#00F08B]/10 text-[#00F08B] flex items-center justify-center font-bold">
+                        <span className="w-5 h-5 rounded-md bg-[#FF5500]/15 text-[#FF5500] flex items-center justify-center font-bold">
                           {idx + 1}
                         </span>
                         <span className="font-bold text-white">{ex.name}</span>
                       </div>
                       <div className="flex items-center gap-4">
                         <span className="text-slate-400 font-mono">{ex.sets}</span>
-                        <span className="px-2 py-0.5 rounded bg-white/5 text-[#00F08B] font-mono text-[11px]">
+                        <span className="px-2 py-0.5 rounded bg-[#FF5500]/10 text-[#FF5500] font-mono text-[11px] font-bold">
                           {ex.target}
                         </span>
                       </div>
@@ -266,9 +265,9 @@ export default function MemberDashboard() {
 
                 <div className="flex justify-between items-center pt-2">
                   <span className="text-xs text-slate-400">Estimated Duration: 45 Mins</span>
-                  <Link href="/#workout">
+                  <Link href="/diet-plans">
                     <Button variant="primary" size="sm" glow>
-                      Launch Live Workout Tracker
+                      Explore Diet Blueprint
                     </Button>
                   </Link>
                 </div>
@@ -295,7 +294,7 @@ export default function MemberDashboard() {
                         <span className="text-slate-400">{log.date}</span>
                       </div>
                       <div className="text-right">
-                        <span className="text-[#00F08B] font-mono font-bold block">{log.volume}</span>
+                        <span className="text-[#FF5500] font-mono font-bold block">{log.volume}</span>
                         <span className="text-[10px] text-slate-400 uppercase">{log.status}</span>
                       </div>
                     </div>
@@ -309,24 +308,24 @@ export default function MemberDashboard() {
             <div className="lg:col-span-4 space-y-6">
               
               {/* Digital Access Card */}
-              <div className="p-6 rounded-3xl bg-[#121724] border border-[#00F08B]/30 shadow-[0_0_30px_rgba(0,240,139,0.1)] text-center">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-[#00F08B] block mb-3">
+              <div className="p-6 rounded-3xl bg-[#0E121B] border border-[#FF5500]/30 shadow-[0_0_30px_rgba(255,85,0,0.1)] text-center">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-[#FF5500] block mb-3 font-space">
                   FACILITY BIOMETRIC PASS
                 </span>
 
                 <div className="w-40 h-40 mx-auto rounded-2xl bg-white p-3 flex flex-col items-center justify-center shadow-lg mb-4">
                   {/* High visual QR placeholder */}
-                  <div className="w-full h-full border-4 border-[#08090D] rounded-lg p-1.5 flex flex-col justify-between">
+                  <div className="w-full h-full border-4 border-[#07080A] rounded-lg p-1.5 flex flex-col justify-between">
                     <div className="flex justify-between">
-                      <div className="w-7 h-7 bg-[#08090D] rounded-sm" />
-                      <div className="w-7 h-7 bg-[#08090D] rounded-sm" />
+                      <div className="w-7 h-7 bg-[#07080A] rounded-sm" />
+                      <div className="w-7 h-7 bg-[#07080A] rounded-sm" />
                     </div>
                     <div className="flex items-center justify-center">
-                      <Dumbbell className="w-6 h-6 text-[#08090D]" />
+                      <Dumbbell className="w-6 h-6 text-[#FF5500] stroke-[2.5]" />
                     </div>
                     <div className="flex justify-between">
-                      <div className="w-7 h-7 bg-[#08090D] rounded-sm" />
-                      <div className="w-4 h-4 bg-[#08090D] rounded-sm self-end" />
+                      <div className="w-7 h-7 bg-[#07080A] rounded-sm" />
+                      <div className="w-4 h-4 bg-[#07080A] rounded-sm self-end" />
                     </div>
                   </div>
                 </div>
@@ -347,12 +346,12 @@ export default function MemberDashboard() {
                 </span>
 
                 <div className="flex items-center gap-3.5 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00F08B] to-[#00A862] flex items-center justify-center text-[#08090D] font-black text-lg">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FF5500] to-[#FF3D00] flex items-center justify-center text-white font-black text-lg shadow-[0_0_15px_rgba(255,85,0,0.25)]">
                     RS
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-white">{member.trainerName}</h4>
-                    <p className="text-xs text-[#00F08B]">Senior Hypertrophy Coach</p>
+                    <p className="text-xs text-[#FF5500]">Senior Hypertrophy Coach</p>
                   </div>
                 </div>
 
@@ -385,9 +384,9 @@ export default function MemberDashboard() {
               Our interactive exercise protocol contains live set checkboxes, rest interval timers, and telemetry metrics.
             </p>
             <div className="pt-2">
-              <Link href="/#workout">
+              <Link href="/diet-plans">
                 <Button variant="primary" size="lg" glow>
-                  Open Live Workout Dashboard
+                  Open Diet & Nutrition Blueprints
                 </Button>
               </Link>
             </div>
@@ -401,7 +400,7 @@ export default function MemberDashboard() {
               <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-1">
                 Body Mass Index
               </span>
-              <span className="text-4xl font-black text-[#00F08B] font-space block mb-1">
+              <span className="text-4xl font-black text-[#FF5500] font-space block mb-1">
                 {member.bmi}
               </span>
               <span className="text-xs text-slate-300">Normal Range (18.5 – 24.9)</span>
@@ -454,11 +453,11 @@ export default function MemberDashboard() {
                       <td className="py-4 font-mono font-bold text-white">{inv.id}</td>
                       <td className="py-4">{inv.date}</td>
                       <td className="py-4">{inv.plan}</td>
-                      <td className="py-4 font-mono font-bold text-[#00F08B]">
+                      <td className="py-4 font-mono font-bold text-[#FF5500]">
                         {formatINR(inv.amount)}
                       </td>
                       <td className="py-4">
-                        <span className="px-2.5 py-1 rounded-full bg-[#00F08B]/10 text-[#00F08B] font-bold text-[10px] uppercase">
+                        <span className="px-2.5 py-1 rounded-full bg-[#FF5500]/15 text-[#FF5500] font-bold text-[10px] uppercase">
                           {inv.status}
                         </span>
                       </td>
@@ -491,26 +490,26 @@ export default function MemberDashboard() {
       >
         <div className="py-4 text-center space-y-4">
           <div className="w-48 h-48 mx-auto rounded-2xl bg-white p-4 flex flex-col items-center justify-center shadow-2xl">
-            <div className="w-full h-full border-4 border-[#08090D] rounded-lg p-2 flex flex-col justify-between">
+            <div className="w-full h-full border-4 border-[#07080A] rounded-lg p-2 flex flex-col justify-between">
               <div className="flex justify-between">
-                <div className="w-8 h-8 bg-[#08090D] rounded-sm" />
-                <div className="w-8 h-8 bg-[#08090D] rounded-sm" />
+                <div className="w-8 h-8 bg-[#07080A] rounded-sm" />
+                <div className="w-8 h-8 bg-[#07080A] rounded-sm" />
               </div>
               <div className="flex items-center justify-center">
-                <Dumbbell className="w-8 h-8 text-[#08090D]" />
+                <Dumbbell className="w-8 h-8 text-[#FF5500] stroke-[2.5]" />
               </div>
               <div className="flex justify-between">
-                <div className="w-8 h-8 bg-[#08090D] rounded-sm" />
-                <div className="w-5 h-5 bg-[#08090D] rounded-sm self-end" />
+                <div className="w-8 h-8 bg-[#07080A] rounded-sm" />
+                <div className="w-5 h-5 bg-[#07080A] rounded-sm self-end" />
               </div>
             </div>
           </div>
 
           <div>
             <h4 className="text-base font-bold text-white">{member.fullName}</h4>
-            <p className="text-xs text-[#00F08B] font-mono font-bold mt-0.5">{member.qrCodeToken}</p>
+            <p className="text-xs text-[#FF5500] font-mono font-bold mt-0.5">{member.qrCodeToken}</p>
             <p className="text-xs text-slate-400 mt-2">
-              Valid at all turnstiles, lockers, and recovery spa suites.
+              Valid at all Bagalkot turnstiles, lockers, and recovery spa suites.
             </p>
           </div>
         </div>
@@ -525,7 +524,7 @@ export default function MemberDashboard() {
       >
         {coachSent ? (
           <div className="py-6 text-center space-y-3">
-            <div className="w-12 h-12 rounded-full bg-[#00F08B]/20 text-[#00F08B] flex items-center justify-center mx-auto">
+            <div className="w-12 h-12 rounded-full bg-[#FF5500]/20 text-[#FF5500] flex items-center justify-center mx-auto">
               <CheckCircle2 className="w-6 h-6 stroke-[2.5]" />
             </div>
             <p className="text-sm font-bold text-white">Message Dispatched</p>
@@ -544,7 +543,7 @@ export default function MemberDashboard() {
                 placeholder="Coach, please review my bench press bar path from today's set 3..."
                 value={coachMessage}
                 onChange={(e) => setCoachMessage(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl bg-[#121724] border border-white/10 text-white placeholder:text-slate-500 focus:border-[#00F08B] focus:outline-none text-sm resize-none"
+                className="w-full px-4 py-3 rounded-xl bg-[#07080A] border border-white/10 text-white placeholder:text-slate-500 focus:border-[#FF5500] focus:outline-none text-sm resize-none"
               />
             </div>
 
@@ -564,7 +563,7 @@ export default function MemberDashboard() {
       <Modal
         isOpen={renewModalOpen}
         onClose={() => setRenewModalOpen(false)}
-        title="EXTEND DITO PASS"
+        title="EXTEND FOREVER PASS"
         maxWidth="md"
       >
         <div className="space-y-4 text-xs sm:text-sm text-slate-300">
@@ -573,7 +572,7 @@ export default function MemberDashboard() {
           </p>
           <div className="p-4 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-between">
             <span>Next Cycle (30 Days)</span>
-            <span className="text-base font-black text-[#00F08B] font-space">
+            <span className="text-base font-black text-[#FF5500] font-space">
               {formatINR(1999)}
             </span>
           </div>
@@ -598,4 +597,3 @@ export default function MemberDashboard() {
     </div>
   );
 }
-

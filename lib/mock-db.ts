@@ -15,6 +15,22 @@ export interface TourInquiry {
   status: "New" | "Contacted" | "Tour Scheduled" | "Converted";
 }
 
+export interface DietPlanRequest {
+  id: string;
+  fullName: string;
+  age: number;
+  fitnessGoal: string;
+  dietaryPreference: "Vegetarian" | "Non-Vegetarian";
+  foodAllergies: string;
+  contactNumber: string;
+  planId: string;
+  planName: string;
+  price: number;
+  formattedPrice: string;
+  createdAt: string;
+  status: "Pending Consultation" | "Assigned" | "Delivered";
+}
+
 export interface MemberProfile {
   id: string;
   fullName: string;
@@ -52,7 +68,7 @@ const INITIAL_INQUIRIES: TourInquiry[] = [
     phone: "+91 98765 43210",
     email: "pooja.h@example.com",
     goal: "Muscle Gain",
-    preferredMembership: "DITO PRO",
+    preferredMembership: "FOREVER PRO",
     preferredDate: "Tomorrow at 6:00 PM",
     message: "Interested in the hypertrophy coaching protocol and strength zone equipment.",
     createdAt: "2026-09-17T14:30:00Z",
@@ -64,7 +80,7 @@ const INITIAL_INQUIRIES: TourInquiry[] = [
     phone: "+91 98112 34567",
     email: "devraj.s@example.com",
     goal: "Strength & Powerlifting",
-    preferredMembership: "DITO ELITE",
+    preferredMembership: "FOREVER ELITE",
     preferredDate: "Saturday at 11:00 AM",
     message: "Looking for dedicated competition prep coaching with coach Arjun Rao.",
     createdAt: "2026-09-16T18:15:00Z",
@@ -76,7 +92,7 @@ const INITIAL_INQUIRIES: TourInquiry[] = [
     phone: "+91 97234 56789",
     email: "meera.k@example.com",
     goal: "Fat Loss & Conditioning",
-    preferredMembership: "DITO PRO",
+    preferredMembership: "FOREVER PRO",
     preferredDate: "Friday at 7:30 AM",
     message: "Want to try the functional turf track and recovery sauna suite.",
     createdAt: "2026-09-15T09:40:00Z",
@@ -88,16 +104,16 @@ const INITIAL_MEMBERS: MemberProfile[] = [
   {
     id: "mem-001",
     fullName: "Alex Mercer",
-    email: "alex.mercer@dito.fit",
+    email: "alex.mercer@foreverfitness.com",
     phone: "+91 99887 76655",
     membershipPlanId: "pro",
-    membershipPlanName: "DITO PRO",
+    membershipPlanName: "FOREVER PRO",
     billingCycle: "monthly",
     status: "Active",
     joinedDate: "2026-01-15",
     expiryDate: "2026-10-15",
     daysRemaining: 27,
-    qrCodeToken: "DITO-PASS-PRO-98421",
+    qrCodeToken: "FOREVER-PASS-PRO-98421",
     trainerName: "Rahul Shetty",
     assignedWorkout: "Chest + Triceps Hypertrophy",
     currentWeightKg: 78.4,
@@ -107,9 +123,9 @@ const INITIAL_MEMBERS: MemberProfile[] = [
     attendanceStreak: 14,
     workoutsCompleted: 58,
     invoices: [
-      { id: "INV-2026-09", date: "15 Sep 2026", amount: 1999, plan: "DITO PRO (Monthly)", status: "Paid" },
-      { id: "INV-2026-08", date: "15 Aug 2026", amount: 1999, plan: "DITO PRO (Monthly)", status: "Paid" },
-      { id: "INV-2026-07", date: "15 Jul 2026", amount: 1999, plan: "DITO PRO (Monthly)", status: "Paid" },
+      { id: "INV-2026-09", date: "15 Sep 2026", amount: 1999, plan: "FOREVER PRO (Monthly)", status: "Paid" },
+      { id: "INV-2026-08", date: "15 Aug 2026", amount: 1999, plan: "FOREVER PRO (Monthly)", status: "Paid" },
+      { id: "INV-2026-07", date: "15 Jul 2026", amount: 1999, plan: "FOREVER PRO (Monthly)", status: "Paid" },
     ],
   },
   {
@@ -118,13 +134,13 @@ const INITIAL_MEMBERS: MemberProfile[] = [
     email: "sunita.roy@example.com",
     phone: "+91 91234 56780",
     membershipPlanId: "elite",
-    membershipPlanName: "DITO ELITE",
+    membershipPlanName: "FOREVER ELITE",
     billingCycle: "yearly",
     status: "Active",
     joinedDate: "2025-11-10",
     expiryDate: "2026-11-10",
     daysRemaining: 53,
-    qrCodeToken: "DITO-PASS-ELITE-11029",
+    qrCodeToken: "FOREVER-PASS-ELITE-11029",
     trainerName: "Arjun Rao",
     assignedWorkout: "Deadlift & Kinetic Posterior Chain",
     currentWeightKg: 62.1,
@@ -134,7 +150,7 @@ const INITIAL_MEMBERS: MemberProfile[] = [
     attendanceStreak: 21,
     workoutsCompleted: 114,
     invoices: [
-      { id: "INV-2025-11", date: "10 Nov 2025", amount: 34990, plan: "DITO ELITE (Annual)", status: "Paid" },
+      { id: "INV-2025-11", date: "10 Nov 2025", amount: 34990, plan: "FOREVER ELITE (Annual)", status: "Paid" },
     ],
   },
   {
@@ -143,13 +159,13 @@ const INITIAL_MEMBERS: MemberProfile[] = [
     email: "kabir.m@example.com",
     phone: "+91 94567 89012",
     membershipPlanId: "starter",
-    membershipPlanName: "DITO STARTER",
+    membershipPlanName: "FOREVER STARTER",
     billingCycle: "monthly",
     status: "Expiring",
     joinedDate: "2026-06-20",
     expiryDate: "2026-09-22",
     daysRemaining: 4,
-    qrCodeToken: "DITO-PASS-START-44589",
+    qrCodeToken: "FOREVER-PASS-START-44589",
     trainerName: "Self-Guided (Floor Support)",
     assignedWorkout: "Full Body Compound Push/Pull",
     currentWeightKg: 85.0,
@@ -159,19 +175,82 @@ const INITIAL_MEMBERS: MemberProfile[] = [
     attendanceStreak: 6,
     workoutsCompleted: 32,
     invoices: [
-      { id: "INV-2026-08", date: "20 Aug 2026", amount: 999, plan: "DITO STARTER (Monthly)", status: "Paid" },
+      { id: "INV-2026-08", date: "20 Aug 2026", amount: 999, plan: "FOREVER STARTER (Monthly)", status: "Paid" },
     ],
   },
 ];
 
+const INITIAL_DIET_REQUESTS: DietPlanRequest[] = [
+  {
+    id: "diet-101",
+    fullName: "Rohan Patil",
+    age: 26,
+    fitnessGoal: "Weight Loss & Lean Cut",
+    dietaryPreference: "Vegetarian",
+    foodAllergies: "None",
+    contactNumber: "+91 98860 12345",
+    planId: "weight-loss",
+    planName: "WEIGHT LOSS PLAN",
+    price: 99,
+    formattedPrice: "₹99",
+    createdAt: "2026-09-18T10:00:00Z",
+    status: "Pending Consultation",
+  },
+  {
+    id: "diet-102",
+    fullName: "Vijay Deshmukh",
+    age: 22,
+    fitnessGoal: "Weight Gain & Muscle Bulk",
+    dietaryPreference: "Non-Vegetarian",
+    foodAllergies: "Peanuts",
+    contactNumber: "+91 97412 88990",
+    planId: "weight-gain",
+    planName: "WEIGHT GAIN PLAN",
+    price: 129,
+    formattedPrice: "₹129",
+    createdAt: "2026-09-17T16:20:00Z",
+    status: "Assigned",
+  },
+];
+
 const STORAGE_KEYS = {
-  INQUIRIES: "dito_inquiries_db",
-  MEMBERS: "dito_members_db",
-  ACTIVE_USER: "dito_active_member",
-  PLANS: "dito_plans_db",
+  INQUIRIES: "forever_inquiries_db",
+  MEMBERS: "forever_members_db",
+  ACTIVE_USER: "forever_active_member",
+  PLANS: "forever_plans_db",
+  DIET_REQUESTS: "forever_diet_requests_db",
 };
 
 export const MockDb = {
+  getDietRequests(): DietPlanRequest[] {
+    if (typeof window === "undefined") return INITIAL_DIET_REQUESTS;
+    const stored = localStorage.getItem(STORAGE_KEYS.DIET_REQUESTS);
+    if (!stored) {
+      localStorage.setItem(STORAGE_KEYS.DIET_REQUESTS, JSON.stringify(INITIAL_DIET_REQUESTS));
+      return INITIAL_DIET_REQUESTS;
+    }
+    try {
+      return JSON.parse(stored);
+    } catch {
+      return INITIAL_DIET_REQUESTS;
+    }
+  },
+
+  addDietRequest(request: Omit<DietPlanRequest, "id" | "createdAt" | "status">): DietPlanRequest {
+    const list = this.getDietRequests();
+    const newReq: DietPlanRequest = {
+      ...request,
+      id: `diet-${Date.now().toString().slice(-4)}`,
+      createdAt: new Date().toISOString(),
+      status: "Pending Consultation",
+    };
+    const updated = [newReq, ...list];
+    if (typeof window !== "undefined") {
+      localStorage.setItem(STORAGE_KEYS.DIET_REQUESTS, JSON.stringify(updated));
+    }
+    return newReq;
+  },
+
   getInquiries(): TourInquiry[] {
     if (typeof window === "undefined") return INITIAL_INQUIRIES;
     const stored = localStorage.getItem(STORAGE_KEYS.INQUIRIES);
@@ -255,8 +334,8 @@ export const MockDb = {
       joinedDate: new Date().toISOString().split("T")[0],
       expiryDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString().split("T")[0],
       daysRemaining: 30,
-      qrCodeToken: `DITO-PASS-${plan.id.toUpperCase()}-${Math.floor(10000 + Math.random() * 90000)}`,
-      trainerName: plan.id === "elite" ? "Arjun Rao (Assigned)" : "DITO Coaching Staff",
+      qrCodeToken: `FOREVER-PASS-${plan.id.toUpperCase()}-${Math.floor(10000 + Math.random() * 90000)}`,
+      trainerName: plan.id === "elite" ? "Arjun Rao (Assigned)" : "FOREVER Coaching Staff",
       assignedWorkout: "Introductory Kinetic Movement Evaluation",
       currentWeightKg: memberData.weightKg || 74,
       targetWeightKg: (memberData.weightKg || 74) - 3,

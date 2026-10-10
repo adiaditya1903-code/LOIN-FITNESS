@@ -20,7 +20,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "Software Architect",
     program: "Strength & Conditioning",
     rating: 5,
-    quote: "DITO completely changed how I approach training. The equipment quality, telemetry tracking, and coach guidance helped me add 40kg to my deadlift while staying injury-free.",
+    quote: "FOREVER FITNESS completely changed how I approach training. The equipment quality, telemetry tracking, and coach guidance helped me add 40kg to my deadlift while staying injury-free.",
     highlight: "Shattered my plateau in 12 weeks",
     timeframe: "Member for 14 months",
     stats: {
@@ -46,9 +46,9 @@ export const TESTIMONIALS: Testimonial[] = [
     id: "t3",
     name: "Rohan Varma",
     role: "Entrepreneur",
-    program: "DITO Elite 1-on-1",
+    program: "FOREVER Elite 1-on-1",
     rating: 5,
-    quote: "With 60+ hour work weeks, efficiency is non-negotiable. DITO PRO eliminated guesswork with bespoke nutrition and structured 45-minute sessions that deliver tangible weekly results.",
+    quote: "With 60+ hour work weeks, efficiency is non-negotiable. FOREVER PRO eliminated guesswork with bespoke nutrition and structured 45-minute sessions that deliver tangible weekly results.",
     highlight: "Maximum ROI on training time",
     timeframe: "Member for 2 years",
     stats: {

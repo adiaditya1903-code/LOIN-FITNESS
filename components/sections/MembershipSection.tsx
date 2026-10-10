@@ -50,21 +50,21 @@ export default function MembershipSection() {
   return (
     <section id="membership" className="py-28 bg-[#08090D] border-t border-white/[0.08] relative">
       {/* Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#00F08B]/[0.03] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#FF5500]/[0.035] rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.1] mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-[#00F08B]" />
-            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#00F08B]">
+            <Sparkles className="w-3.5 h-3.5 text-[#FF5500]" />
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#FF5500]">
               TRANSPARENT VALUE
             </span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white font-space mb-4">
-            CHOOSE YOUR <span className="text-[#00F08B]">PLAN</span>
+            CHOOSE YOUR <span className="text-[#FF5500]">PLAN</span>
           </h2>
 
           <p className="text-sm sm:text-base text-slate-300">
@@ -78,7 +78,7 @@ export default function MembershipSection() {
               onClick={() => setBillingCycle("monthly")}
               className={`px-6 py-2 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                 billingCycle === "monthly"
-                  ? "bg-gradient-to-r from-[#00F08B] to-[#00D488] text-[#08090D] shadow-md"
+                  ? "bg-gradient-to-r from-[#FF5500] to-[#FF3D00] text-white shadow-md shadow-[#FF5500]/25"
                   : "text-slate-400 hover:text-white"
               }`}
             >
@@ -90,12 +90,12 @@ export default function MembershipSection() {
               onClick={() => setBillingCycle("yearly")}
               className={`px-6 py-2 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer flex items-center gap-2 ${
                 billingCycle === "yearly"
-                  ? "bg-gradient-to-r from-[#00F08B] to-[#00D488] text-[#08090D] shadow-md"
+                  ? "bg-gradient-to-r from-[#FF5500] to-[#FF3D00] text-white shadow-md shadow-[#FF5500]/25"
                   : "text-slate-400 hover:text-white"
               }`}
             >
               <span>Annual Billing</span>
-              <span className="px-2 py-0.5 rounded-full text-[10px] font-black uppercase bg-[#08090D] text-[#00F08B]">
+              <span className="px-2 py-0.5 rounded-full text-[10px] font-black uppercase bg-[#08090D] text-[#FF5500]">
                 Save ~17%
               </span>
             </button>
@@ -114,14 +114,14 @@ export default function MembershipSection() {
                 key={plan.id}
                 className={`relative rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 ${
                   isPopular
-                    ? "bg-[#111624] border-2 border-[#00F08B] shadow-[0_20px_50px_rgba(0,240,139,0.15)] z-20"
+                    ? "bg-[#12151F] border-2 border-[#FF5500] shadow-[0_20px_50px_rgba(255,85,0,0.22)] z-20"
                     : "bg-[#0E121B] border border-white/[0.08] hover:border-white/20 shadow-xl"
                 }`}
               >
                 {/* Popular Badge */}
                 {isPopular && (
                   <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                    <span className="px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest bg-gradient-to-r from-[#00F08B] to-[#00D488] text-[#08090D] shadow-[0_0_15px_rgba(0,240,139,0.5)] flex items-center gap-1.5">
+                    <span className="px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest bg-gradient-to-r from-[#FF5500] to-[#FF3D00] text-white shadow-[0_0_15px_rgba(255,85,0,0.5)] flex items-center gap-1.5">
                       <Zap className="w-3.5 h-3.5 fill-current" />
                       MOST POPULAR
                     </span>
@@ -130,7 +130,7 @@ export default function MembershipSection() {
 
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <Badge variant={isPopular ? "lime" : "silver"}>
+                    <Badge variant={isPopular ? "orange" : "silver"}>
                       {plan.badge || "MEMBERSHIP"}
                     </Badge>
                   </div>
@@ -154,7 +154,7 @@ export default function MembershipSection() {
                       </span>
                     </div>
                     {billingCycle === "yearly" && (
-                      <span className="text-[11px] text-[#00F08B] font-medium block mt-1">
+                      <span className="text-[11px] text-[#FF5500] font-medium block mt-1">
                         Includes 2 months complimentary access
                       </span>
                     )}
@@ -167,7 +167,7 @@ export default function MembershipSection() {
                     </span>
                     {plan.features.map((feature, idx) => (
                       <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-300">
-                        <div className="w-5 h-5 rounded-full bg-[#00F08B]/10 flex items-center justify-center text-[#00F08B] shrink-0 mt-0.5">
+                        <div className="w-5 h-5 rounded-full bg-[#FF5500]/10 flex items-center justify-center text-[#FF5500] shrink-0 mt-0.5">
                           <Check className="w-3.5 h-3.5" />
                         </div>
                         <span>{feature}</span>
@@ -197,7 +197,7 @@ export default function MembershipSection() {
         {/* Enterprise & Corporate banner */}
         <div className="mt-14 rounded-2xl bg-[#0E121B] border border-white/[0.08] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-[#00F08B]/10 border border-[#00F08B]/30 flex items-center justify-center text-[#00F08B] shrink-0">
+            <div className="w-12 h-12 rounded-2xl bg-[#FF5500]/10 border border-[#FF5500]/30 flex items-center justify-center text-[#FF5500] shrink-0">
               <ShieldCheck className="w-6 h-6" />
             </div>
             <div>
@@ -224,14 +224,14 @@ export default function MembershipSection() {
         >
           {registrationSubmitted ? (
             <div className="text-center py-8 space-y-4">
-              <div className="w-16 h-16 rounded-full bg-[#00F08B]/20 border border-[#00F08B]/40 text-[#00F08B] flex items-center justify-center mx-auto">
+              <div className="w-16 h-16 rounded-full bg-[#FF5500]/20 border border-[#FF5500]/40 text-[#FF5500] flex items-center justify-center mx-auto">
                 <Check className="w-8 h-8" />
               </div>
               <h4 className="text-2xl font-black uppercase text-white font-space">
                 Membership Activated!
               </h4>
               <p className="text-xs sm:text-sm text-slate-300 max-w-sm mx-auto">
-                Welcome to DITO FITNESS. Your digital telemetry pass has been generated and provisioned.
+                Welcome to FOREVER FITNESS. Your digital telemetry pass has been generated and provisioned.
               </p>
               <div className="pt-4">
                 <Link href="/member">
@@ -250,7 +250,7 @@ export default function MembershipSection() {
                 </div>
                 <div className="text-right">
                   <span className="text-xs text-slate-400 block uppercase">Billed {billingCycle}</span>
-                  <span className="text-base font-black text-[#00F08B] font-space">
+                  <span className="text-base font-black text-[#FF5500] font-space">
                     {formatINR(billingCycle === "yearly" ? activeModalPlan.yearlyPrice : activeModalPlan.monthlyPrice)}
                   </span>
                 </div>
@@ -266,7 +266,7 @@ export default function MembershipSection() {
                   placeholder="e.g. Alex Mercer"
                   value={formData.fullName}
                   onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#121724] border border-white/10 text-white placeholder:text-slate-500 focus:border-[#00F08B] focus:outline-none text-xs sm:text-sm"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#12151F] border border-white/10 text-white placeholder:text-slate-500 focus:border-[#FF5500] focus:outline-none text-xs sm:text-sm"
                 />
               </div>
 
@@ -277,10 +277,10 @@ export default function MembershipSection() {
                 <input
                   type="email"
                   required
-                  placeholder="alex.mercer@dito.fit"
+                  placeholder="athlete@foreverfitness.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#121724] border border-white/10 text-white placeholder:text-slate-500 focus:border-[#00F08B] focus:outline-none text-xs sm:text-sm"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#12151F] border border-white/10 text-white placeholder:text-slate-500 focus:border-[#FF5500] focus:outline-none text-xs sm:text-sm"
                 />
               </div>
 
@@ -293,7 +293,7 @@ export default function MembershipSection() {
                   placeholder="+91 98765 43210"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#121724] border border-white/10 text-white placeholder:text-slate-500 focus:border-[#00F08B] focus:outline-none text-xs sm:text-sm"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#12151F] border border-white/10 text-white placeholder:text-slate-500 focus:border-[#FF5500] focus:outline-none text-xs sm:text-sm"
                 />
               </div>
 

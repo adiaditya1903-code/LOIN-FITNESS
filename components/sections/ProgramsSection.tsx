@@ -35,13 +35,13 @@ export default function ProgramsSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <div className="inline-flex items-center gap-2 mb-3">
-              <span className="w-2 h-2 rounded-full bg-[#00F08B]" />
-              <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#00F08B]">
-                TRAINING GOAL
+              <span className="w-2 h-2 rounded-full bg-[#FF5500] animate-pulse" />
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#FF5500]">
+                TRAINING GOALS
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white font-space">
-              TRAINING <span className="text-[#00F08B]">GOAL.</span>
+              TRAINING <span className="text-[#FF5500]">GOALS.</span>
             </h2>
           </div>
           <p className="text-sm text-slate-300 max-w-md leading-relaxed">
@@ -58,7 +58,7 @@ export default function ProgramsSection() {
             return (
               <div
                 key={program.id}
-                className="group relative rounded-3xl overflow-hidden bg-[#0E121B] border border-white/[0.08] hover:border-[#00F08B]/40 transition-all duration-300 flex flex-col hover:-translate-y-1.5 shadow-[0_15px_35px_rgba(0,0,0,0.5)]"
+                className="group relative rounded-3xl overflow-hidden bg-[#0E121B] border border-white/[0.08] hover:border-[#FF5500]/50 transition-all duration-300 flex flex-col hover:-translate-y-1.5 shadow-[0_15px_35px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_45px_rgba(255,85,0,0.15)]"
               >
                 {/* Top Image Banner */}
                 <div className="relative h-48 w-full overflow-hidden">
@@ -72,23 +72,23 @@ export default function ProgramsSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0E121B] via-[#0E121B]/40 to-transparent" />
 
                   {/* Icon floating on image */}
-                  <div className="absolute top-4 left-4 w-11 h-11 rounded-2xl bg-[#08090D]/85 backdrop-blur-md border border-white/20 flex items-center justify-center text-[#00F08B] shadow-lg group-hover:bg-[#00F08B] group-hover:text-[#08090D] transition-all">
+                  <div className="absolute top-4 left-4 w-11 h-11 rounded-2xl bg-[#08090D]/85 backdrop-blur-md border border-white/20 flex items-center justify-center text-[#FF5500] shadow-lg group-hover:bg-[#FF5500] group-hover:text-white transition-all">
                     <IconComponent className="w-5 h-5" />
                   </div>
 
                   {/* Difficulty Tag */}
                   <div className="absolute top-4 right-4">
-                    <Badge variant="lime">{program.difficulty}</Badge>
+                    <Badge variant="orange">{program.difficulty}</Badge>
                   </div>
                 </div>
 
                 {/* Card Body */}
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-widest text-[#00D4FF] block mb-1">
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-[#FF7700] block mb-1">
                       {program.category}
                     </span>
-                    <h3 className="text-xl font-black uppercase tracking-tight text-white mb-3 font-space group-hover:text-[#00F08B] transition-colors">
+                    <h3 className="text-xl font-black uppercase tracking-tight text-white mb-3 font-space group-hover:text-[#FF5500] transition-colors">
                       {program.name}
                     </h3>
                     <p className="text-xs text-slate-300 leading-relaxed mb-6">
@@ -100,11 +100,11 @@ export default function ProgramsSection() {
                   <div>
                     <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs text-slate-400 mb-5">
                       <div className="flex items-center gap-1.5">
-                        <Clock className="w-3.5 h-3.5 text-[#00F08B]" />
+                        <Clock className="w-3.5 h-3.5 text-[#FF5500]" />
                         <span>{program.duration}</span>
                       </div>
                       <div className="flex items-center gap-1.5">
-                        <Calendar className="w-3.5 h-3.5 text-[#00F08B]" />
+                        <Calendar className="w-3.5 h-3.5 text-[#FF5500]" />
                         <span>{program.schedule}</span>
                       </div>
                     </div>
@@ -112,11 +112,11 @@ export default function ProgramsSection() {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="w-full group-hover:border-[#00F08B] group-hover:bg-[#00F08B]/10"
+                      className="w-full group-hover:border-[#FF5500] group-hover:bg-[#FF5500]/10"
                       onClick={() => setSelectedProgram(program)}
                     >
                       <span>Explore Program</span>
-                      <ArrowRight className="w-4 h-4 text-[#00F08B] transition-transform group-hover:translate-x-1" />
+                      <ArrowRight className="w-4 h-4 text-[#FF5500] transition-transform group-hover:translate-x-1" />
                     </Button>
                   </div>
                 </div>
@@ -148,15 +148,15 @@ export default function ProgramsSection() {
             </div>
 
             {/* Focus Pillars */}
-            <div className="p-5 rounded-2xl bg-[#121724] border border-white/5 space-y-3">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#00F08B] flex items-center gap-2">
-                <Gauge className="w-4 h-4 text-[#00F08B]" />
+            <div className="p-5 rounded-2xl bg-[#12151F] border border-white/5 space-y-3">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#FF5500] flex items-center gap-2">
+                <Gauge className="w-4 h-4 text-[#FF5500]" />
                 Target Adaptations & Training Focus
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {selectedProgram.focusAreas.map((item: string, i: number) => (
                   <div key={i} className="flex items-center gap-2 text-xs text-slate-300">
-                    <Check className="w-4 h-4 text-[#00F08B] shrink-0" />
+                    <Check className="w-4 h-4 text-[#FF5500] shrink-0" />
                     <span>{item}</span>
                   </div>
                 ))}
@@ -175,7 +175,7 @@ export default function ProgramsSection() {
               </div>
               <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5">
                 <span className="text-[10px] uppercase text-slate-400 block mb-0.5">Telemetry</span>
-                <span className="text-base font-black text-[#00F08B] font-space">Bi-Weekly</span>
+                <span className="text-base font-black text-[#FF5500] font-space">Bi-Weekly</span>
               </div>
               <div className="p-3 rounded-xl bg-white/[0.03] border border-white/5">
                 <span className="text-[10px] uppercase text-slate-400 block mb-0.5">Coach Ratio</span>
@@ -185,7 +185,7 @@ export default function ProgramsSection() {
 
             <div className="pt-2 flex items-center justify-between border-t border-white/[0.08]">
               <span className="text-xs text-slate-400">
-                Included in DITO PRO and ELITE athlete memberships.
+                Included in FOREVER PRO and ELITE athlete memberships.
               </span>
               <a href="#membership" onClick={() => setSelectedProgram(null)}>
                 <Button size="sm" variant="primary">

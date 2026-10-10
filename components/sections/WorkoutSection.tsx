@@ -81,29 +81,22 @@ export default function WorkoutSection() {
     });
   };
 
-  const handleStartWorkout = () => {
-    setIsWorkoutActive(true);
+  const resetTimer = () => {
     setRestTimerSeconds(60);
     setIsTimerRunning(false);
   };
 
   const handleResetWorkout = () => {
     setCompletedSets({});
-    setIsWorkoutActive(false);
     setSessionCompleted(false);
-    setIsTimerRunning(false);
-    setRestTimerSeconds(60);
-  };
-
-  const resetTimer = () => {
-    setRestTimerSeconds(60);
-    setIsTimerRunning(false);
+    setIsWorkoutActive(false);
+    resetTimer();
   };
 
   const formatSeconds = (sec: number) => {
-    const mins = Math.floor(sec / 60);
-    const secs = sec % 60;
-    return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
+    const m = Math.floor(sec / 60);
+    const s = sec % 60;
+    return `${m}:${s < 10 ? "0" : ""}${s}`;
   };
 
   return (
@@ -113,13 +106,13 @@ export default function WorkoutSection() {
         {/* Section Title Header */}
         <div className="text-center max-w-2xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.1] mb-3">
-            <Flame className="w-3.5 h-3.5 text-[#00F08B]" />
-            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#00F08B]">
+            <Flame className="w-3.5 h-3.5 text-[#FF5500]" />
+            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#FF5500]">
               ATHLETIC PROTOCOL
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white font-space">
-            TODAY&apos;S <span className="text-[#00F08B]">DITO WORKOUT.</span>
+            TODAY&apos;S <span className="text-[#FF5500]">FOREVER WORKOUT.</span>
           </h2>
           <p className="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed">
             Interactive weekly telemetry tracker. Select any training day, log your sets live, and synchronize rest timers.
@@ -141,7 +134,7 @@ export default function WorkoutSection() {
                   }}
                   className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-black font-space tracking-wider transition-all duration-200 cursor-pointer ${
                     isActive
-                      ? "bg-[#00F08B] text-[#08090D] shadow-lg shadow-[#00F08B]/25 scale-105"
+                      ? "bg-gradient-to-r from-[#FF5500] to-[#FF3D00] text-white shadow-lg shadow-[#FF5500]/25 scale-105"
                       : "text-slate-400 hover:text-white hover:bg-white/[0.05]"
                   }`}
                   title={day.full}
@@ -163,7 +156,7 @@ export default function WorkoutSection() {
                 <span className="text-lg sm:text-xl font-black text-white font-space tracking-wide">
                   {workout.title}
                 </span>
-                <Badge variant="lime">{workout.level}</Badge>
+                <Badge variant="orange">{workout.level}</Badge>
               </div>
               <p className="text-xs text-slate-300 max-w-xl leading-relaxed">
                 {workout.description}
@@ -172,7 +165,7 @@ export default function WorkoutSection() {
 
             <div className="flex items-center gap-6 self-start sm:self-center shrink-0">
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-[#00F08B]" />
+                <Clock className="w-4 h-4 text-[#FF5500]" />
                 <div>
                   <span className="text-[10px] text-slate-400 uppercase font-bold block leading-tight">Duration</span>
                   <span className="text-sm font-bold text-white font-mono">{workout.durationMinutes} Mins</span>
@@ -180,7 +173,7 @@ export default function WorkoutSection() {
               </div>
 
               <div className="flex items-center gap-2">
-                <Flame className="w-4 h-4 text-amber-400" />
+                <Flame className="w-4 h-4 text-[#FF5500]" />
                 <div>
                   <span className="text-[10px] text-slate-400 uppercase font-bold block leading-tight">Est. Burn</span>
                   <span className="text-sm font-bold text-white font-mono">{workout.estCalories} kcal</span>
@@ -190,15 +183,15 @@ export default function WorkoutSection() {
           </div>
 
           {/* Progress Bar & Timer Row */}
-          <div className="mb-8 p-4 rounded-2xl bg-[#121724] border border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="mb-8 p-4 rounded-2xl bg-[#12151F] border border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex-1">
               <div className="flex justify-between text-xs mb-1.5">
                 <span className="font-bold uppercase tracking-wider text-slate-300">Workout Completion</span>
-                <span className="font-mono text-[#00F08B] font-bold">{progressPercent}% ({totalCompleted}/{totalSets} Sets)</span>
+                <span className="font-mono text-[#FF5500] font-bold">{progressPercent}% ({totalCompleted}/{totalSets} Sets)</span>
               </div>
               <div className="h-2.5 w-full bg-white/10 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-gradient-to-r from-[#00F08B] to-[#00D4FF] rounded-full transition-all duration-300"
+                  className="h-full bg-gradient-to-r from-[#FF5500] to-[#FFAA00] rounded-full transition-all duration-300"
                   style={{ width: `${progressPercent}%` }}
                 />
               </div>
@@ -216,7 +209,7 @@ export default function WorkoutSection() {
                 <button
                   type="button"
                   onClick={() => setIsTimerRunning(!isTimerRunning)}
-                  className="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
+                  className="p-2 rounded-xl bg-[#FF5500] hover:bg-[#FF3D00] text-white transition-colors cursor-pointer shadow-md shadow-[#FF5500]/25"
                   title={isTimerRunning ? "Pause Rest" : "Start Rest"}
                 >
                   {isTimerRunning ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
@@ -235,14 +228,14 @@ export default function WorkoutSection() {
 
           {/* Session Complete Banner */}
           {sessionCompleted && (
-            <div className="mb-6 p-4 rounded-2xl bg-[#00F08B]/10 border border-[#00F08B]/40 flex items-center justify-between">
+            <div className="mb-6 p-4 rounded-2xl bg-[#FF5500]/10 border border-[#FF5500]/40 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <Award className="w-6 h-6 text-[#00F08B]" />
+                <Award className="w-6 h-6 text-[#FF5500]" />
                 <div>
                   <h5 className="font-bold text-white text-sm uppercase font-space">
                     Session Protocol Completed!
                   </h5>
-                  <p className="text-xs text-[#00F08B]">
+                  <p className="text-xs text-[#FF5500]">
                     All {totalSets} sets logged successfully for {workout.dayName}. Fantastic intensity!
                   </p>
                 </div>
@@ -264,13 +257,13 @@ export default function WorkoutSection() {
                   key={exercise.id}
                   className={`p-4 sm:p-5 rounded-2xl border transition-all duration-300 ${
                     isExerciseComplete
-                      ? "bg-[#00F08B]/[0.03] border-[#00F08B]/30"
-                      : "bg-[#121724] border-white/5 hover:border-white/15"
+                      ? "bg-[#FF5500]/[0.04] border-[#FF5500]/30"
+                      : "bg-[#12151F] border-white/5 hover:border-white/15"
                   }`}
                 >
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
                     <div className="flex items-center gap-3">
-                      <span className="w-7 h-7 rounded-lg bg-white/5 border border-white/10 text-xs font-mono font-bold flex items-center justify-center text-[#00F08B]">
+                      <span className="w-7 h-7 rounded-lg bg-white/5 border border-white/10 text-xs font-mono font-bold flex items-center justify-center text-[#FF5500]">
                         0{index + 1}
                       </span>
                       <div>
@@ -287,9 +280,9 @@ export default function WorkoutSection() {
                       <span>{exercise.sets} Sets</span>
                       <span className="text-white font-bold">{exercise.reps}</span>
                       {exercise.restSec > 0 ? (
-                        <span className="text-[10px] text-[#00D4FF] uppercase">{exercise.restSec}s Rest</span>
+                        <span className="text-[10px] text-[#FFAA00] uppercase">{exercise.restSec}s Rest</span>
                       ) : (
-                        <span className="text-[10px] text-[#00F08B] uppercase">Active Flow</span>
+                        <span className="text-[10px] text-[#FF5500] uppercase font-bold">Active Flow</span>
                       )}
                     </div>
                   </div>
@@ -309,7 +302,7 @@ export default function WorkoutSection() {
                             onClick={() => toggleSet(exercise.id, setIdx, exercise.sets)}
                             className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer flex items-center gap-1.5 border ${
                               isSetComplete
-                                ? "bg-[#00F08B] text-[#08090D] border-[#00F08B] shadow-[0_0_10px_rgba(0,240,139,0.3)]"
+                                ? "bg-[#FF5500] text-white border-[#FF5500] shadow-[0_0_10px_rgba(255,85,0,0.35)]"
                                 : "bg-white/5 text-slate-400 border-white/10 hover:border-white/25 hover:text-white"
                             }`}
                           >
@@ -343,4 +336,3 @@ export default function WorkoutSection() {
     </section>
   );
 }
-

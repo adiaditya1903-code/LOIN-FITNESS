@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { MockDb, TourInquiry, MemberProfile } from "@/lib/mock-db";
+import { MockDb, TourInquiry, MemberProfile, DietPlanRequest } from "@/lib/mock-db";
 import { MembershipPlan } from "@/data/memberships";
 import { TRAINERS } from "@/data/trainers";
 import { PROGRAMS } from "@/data/programs";
@@ -30,13 +30,15 @@ import {
   ArrowUpRight,
   Activity,
   Filter,
+  Utensils,
 } from "lucide-react";
 
 export default function AdminDashboard() {
   const [inquiries, setInquiries] = useState<TourInquiry[]>([]);
+  const [dietRequests, setDietRequests] = useState<DietPlanRequest[]>([]);
   const [members, setMembers] = useState<MemberProfile[]>([]);
   const [plans, setPlans] = useState<MembershipPlan[]>([]);
-  const [activeTab, setActiveTab] = useState<"inquiries" | "members" | "pricing" | "trainers" | "programs">("inquiries");
+  const [activeTab, setActiveTab] = useState<"inquiries" | "diet" | "members" | "pricing" | "trainers" | "programs">("inquiries");
   
   const [searchMemberQuery, setSearchMemberQuery] = useState("");
   const [selectedPlanForEdit, setSelectedPlanForEdit] = useState<MembershipPlan | null>(null);
@@ -45,6 +47,7 @@ export default function AdminDashboard() {
 
   useEffect(() => {
     setInquiries(MockDb.getInquiries());
+    setDietRequests(MockDb.getDietRequests());
     setMembers(MockDb.getMembers());
     setPlans(MockDb.getPlans());
   }, []);
@@ -70,30 +73,30 @@ export default function AdminDashboard() {
   );
 
   return (
-    <div className="min-h-screen bg-[#08090D] text-slate-100 flex flex-col selection:bg-[#00F08B] selection:text-[#08090D]">
+    <div className="min-h-screen bg-[#07080A] text-slate-100 flex flex-col selection:bg-[#FF5500] selection:text-white">
       {/* Admin Header */}
-      <header className="sticky top-0 z-30 bg-[#0D111A]/90 backdrop-blur-xl border-b border-white/[0.08] px-4 sm:px-8 py-3.5 flex items-center justify-between shadow-lg shadow-black/40">
+      <header className="sticky top-0 z-30 bg-[#0E121B]/95 backdrop-blur-xl border-b border-white/[0.08] px-4 sm:px-8 py-3.5 flex items-center justify-between shadow-lg shadow-black/40">
         <div className="flex items-center gap-4">
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#00F08B] to-[#00D4FF] flex items-center justify-center shadow-md shadow-[#00F08B]/20 group-hover:scale-105 transition-transform">
-              <Dumbbell className="w-4 h-4 text-[#08090D] rotate-45" />
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#FF5500] to-[#FF3D00] flex items-center justify-center shadow-md shadow-[#FF5500]/25 group-hover:scale-105 transition-transform">
+              <Dumbbell className="w-4 h-4 text-white rotate-45 stroke-[2.5]" />
             </div>
             <span className="text-base sm:text-lg font-black tracking-wider text-white font-space">
-              DITO <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F08B] to-[#00D4FF]">COMMAND</span>
+              FOREVER <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5500] to-[#FF8C00]">COMMAND</span>
             </span>
           </Link>
-          <span className="hidden sm:inline-flex items-center gap-1.5 text-[11px] font-bold px-3 py-1 rounded-full bg-[#00F08B]/10 text-[#00F08B] border border-[#00F08B]/30 font-mono tracking-wider">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00F08B] animate-pulse"></span>
-            ROOT ACCESS
+          <span className="hidden sm:inline-flex items-center gap-1.5 text-[11px] font-bold px-3 py-1 rounded-full bg-[#FF5500]/10 text-[#FF5500] border border-[#FF5500]/30 font-mono tracking-wider">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500] animate-pulse"></span>
+            ROOT ACCESS • BAGALKOT
           </span>
         </div>
 
         <div className="flex items-center gap-4">
           <Link
             href="/"
-            className="text-xs font-semibold text-slate-400 hover:text-[#00F08B] transition-colors flex items-center gap-1"
+            className="text-xs font-semibold text-slate-400 hover:text-[#FF5500] transition-colors flex items-center gap-1"
           >
-            <span>Live Portal</span>
+            <span>Live Club Portal</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </Link>
           <Link href="/login">
@@ -113,27 +116,27 @@ export default function AdminDashboard() {
         
         {/* Top 5 KPI Metrics Cards */}
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-3.5 sm:gap-4">
-          <div className="p-5 rounded-2xl bg-gradient-to-b from-[#111722] to-[#0D111A] border border-white/[0.08] relative overflow-hidden group hover:border-[#00F08B]/40 transition-all shadow-md shadow-black/30">
+          <div className="p-5 rounded-2xl bg-gradient-to-b from-[#111722] to-[#0E121B] border border-white/[0.08] relative overflow-hidden group hover:border-[#FF5500]/40 transition-all shadow-md shadow-black/30">
             <div className="flex items-center justify-between text-slate-400 mb-2">
               <span className="text-[11px] uppercase font-bold tracking-wider text-slate-300">Total Members</span>
-              <Users className="w-4 h-4 text-[#00F08B]" />
+              <Users className="w-4 h-4 text-[#FF5500]" />
             </div>
             <span className="text-2xl sm:text-3xl font-black text-white font-space">542</span>
-            <span className="text-[11px] text-[#00F08B] font-semibold block mt-1 flex items-center gap-1">
+            <span className="text-[11px] text-[#FF5500] font-semibold block mt-1 flex items-center gap-1">
               <TrendingUp className="w-3 h-3 inline" /> +12% vs last month
             </span>
           </div>
 
-          <div className="p-5 rounded-2xl bg-gradient-to-b from-[#111722] to-[#0D111A] border border-white/[0.08] relative overflow-hidden group hover:border-[#00F08B]/40 transition-all shadow-md shadow-black/30">
+          <div className="p-5 rounded-2xl bg-gradient-to-b from-[#111722] to-[#0E121B] border border-white/[0.08] relative overflow-hidden group hover:border-[#FF5500]/40 transition-all shadow-md shadow-black/30">
             <div className="flex items-center justify-between text-slate-400 mb-2">
               <span className="text-[11px] uppercase font-bold tracking-wider text-slate-300">Active Plans</span>
-              <CheckCircle className="w-4 h-4 text-[#00F08B]" />
+              <CheckCircle className="w-4 h-4 text-[#FF5500]" />
             </div>
-            <span className="text-2xl sm:text-3xl font-black text-[#00F08B] font-space">508</span>
+            <span className="text-2xl sm:text-3xl font-black text-[#FF5500] font-space">508</span>
             <span className="text-[11px] text-slate-400 font-medium block mt-1">93.7% Retention rate</span>
           </div>
 
-          <div className="p-5 rounded-2xl bg-gradient-to-b from-[#111722] to-[#0D111A] border border-white/[0.08] relative overflow-hidden group hover:border-amber-400/40 transition-all shadow-md shadow-black/30">
+          <div className="p-5 rounded-2xl bg-gradient-to-b from-[#111722] to-[#0E121B] border border-white/[0.08] relative overflow-hidden group hover:border-amber-400/40 transition-all shadow-md shadow-black/30">
             <div className="flex items-center justify-between text-slate-400 mb-2">
               <span className="text-[11px] uppercase font-bold tracking-wider text-slate-300">Expiring (7D)</span>
               <AlertTriangle className="w-4 h-4 text-amber-400" />
@@ -142,22 +145,22 @@ export default function AdminDashboard() {
             <span className="text-[11px] text-slate-400 font-medium block mt-1">Renewal notices queued</span>
           </div>
 
-          <div className="p-5 rounded-2xl bg-gradient-to-b from-[#111722] to-[#0D111A] border border-white/[0.08] relative overflow-hidden group hover:border-[#00D4FF]/40 transition-all shadow-md shadow-black/30">
+          <div className="p-5 rounded-2xl bg-gradient-to-b from-[#111722] to-[#0E121B] border border-white/[0.08] relative overflow-hidden group hover:border-[#FF8C00]/40 transition-all shadow-md shadow-black/30">
             <div className="flex items-center justify-between text-slate-400 mb-2">
               <span className="text-[11px] uppercase font-bold tracking-wider text-slate-300">Monthly MRR</span>
-              <CreditCard className="w-4 h-4 text-[#00D4FF]" />
+              <CreditCard className="w-4 h-4 text-[#FF8C00]" />
             </div>
             <span className="text-xl sm:text-2xl font-black text-white font-space">₹10,48,500</span>
-            <span className="text-[11px] text-[#00D4FF] font-semibold block mt-1">Recurring revenue</span>
+            <span className="text-[11px] text-[#FF8C00] font-semibold block mt-1">Recurring revenue</span>
           </div>
 
-          <div className="p-5 rounded-2xl bg-gradient-to-b from-[#111722] to-[#0D111A] border border-white/[0.08] col-span-2 lg:col-span-1 relative overflow-hidden group hover:border-[#00F08B]/40 transition-all shadow-md shadow-black/30">
+          <div className="p-5 rounded-2xl bg-gradient-to-b from-[#111722] to-[#0E121B] border border-white/[0.08] col-span-2 lg:col-span-1 relative overflow-hidden group hover:border-[#FF5500]/40 transition-all shadow-md shadow-black/30">
             <div className="flex items-center justify-between text-slate-400 mb-2">
               <span className="text-[11px] uppercase font-bold tracking-wider text-slate-300">New Onboards</span>
-              <TrendingUp className="w-4 h-4 text-[#00F08B]" />
+              <TrendingUp className="w-4 h-4 text-[#FF5500]" />
             </div>
             <span className="text-2xl sm:text-3xl font-black text-white font-space">+68</span>
-            <span className="text-[11px] text-[#00F08B] font-semibold block mt-1">This billing cycle</span>
+            <span className="text-[11px] text-[#FF5500] font-semibold block mt-1">This billing cycle</span>
           </div>
         </div>
 
@@ -165,6 +168,7 @@ export default function AdminDashboard() {
         <div className="flex items-center gap-2 border-b border-white/[0.08] pb-2 overflow-x-auto">
           {[
             { id: "inquiries", label: `Tour Inquiries (${inquiries.length})`, icon: Mail },
+            { id: "diet", label: `Diet Orders (${dietRequests.length})`, icon: Utensils },
             { id: "members", label: `Member Roster (${members.length})`, icon: Users },
             { id: "pricing", label: "Plans & Pricing Config", icon: CreditCard },
             { id: "trainers", label: `Trainers (${TRAINERS.length})`, icon: Sparkles },
@@ -179,11 +183,11 @@ export default function AdminDashboard() {
                 onClick={() => setActiveTab(tab.id as typeof activeTab)}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap ${
                   isActive
-                    ? "bg-[#00F08B] text-[#08090D] shadow-lg shadow-[#00F08B]/25"
+                    ? "bg-gradient-to-r from-[#FF5500] to-[#FF3D00] text-white shadow-lg shadow-[#FF5500]/25"
                     : "bg-white/[0.02] border border-white/[0.06] text-slate-400 hover:text-white hover:bg-white/[0.06]"
                 }`}
               >
-                <Icon className={`w-3.5 h-3.5 ${isActive ? "text-[#08090D]" : "text-slate-400"}`} />
+                <Icon className={`w-3.5 h-3.5 ${isActive ? "text-white" : "text-slate-400"}`} />
                 <span>{tab.label}</span>
               </button>
             );
@@ -196,7 +200,7 @@ export default function AdminDashboard() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
               <div>
                 <h3 className="text-xl font-bold text-white uppercase font-space flex items-center gap-2">
-                  <Mail className="w-5 h-5 text-[#00F08B]" />
+                  <Mail className="w-5 h-5 text-[#FF5500]" />
                   VIP Tour & Consultation Requests
                 </h3>
                 <p className="text-xs text-slate-400 mt-1">
@@ -229,7 +233,7 @@ export default function AdminDashboard() {
                         <div className="text-slate-200 font-medium">{inq.phone}</div>
                         <div className="text-slate-400 text-[11px]">{inq.email}</div>
                       </td>
-                      <td className="py-4 font-semibold text-[#00F08B]">{inq.goal}</td>
+                      <td className="py-4 font-semibold text-[#FF5500]">{inq.goal}</td>
                       <td className="py-4 font-mono">
                         <span className="px-2 py-0.5 rounded-md bg-white/[0.04] border border-white/[0.08] text-slate-300">
                           {inq.preferredMembership}
@@ -245,7 +249,7 @@ export default function AdminDashboard() {
                               ? "bg-amber-500/15 text-amber-300 border border-amber-500/30"
                               : inq.status === "Tour Scheduled"
                               ? "bg-purple-500/15 text-purple-300 border border-purple-500/30"
-                              : "bg-[#00F08B]/15 text-[#00F08B] border border-[#00F08B]/30"
+                              : "bg-[#FF5500]/15 text-[#FF5500] border border-[#FF5500]/30"
                           }`}
                         >
                           {inq.status}
@@ -260,7 +264,7 @@ export default function AdminDashboard() {
                               e.target.value as TourInquiry["status"]
                             )
                           }
-                          className="px-2.5 py-1.5 rounded-xl bg-[#08090D] border border-white/10 text-slate-200 text-xs focus:border-[#00F08B] focus:ring-1 focus:ring-[#00F08B]/40 focus:outline-none cursor-pointer transition-all"
+                          className="px-2.5 py-1.5 rounded-xl bg-[#07080A] border border-white/10 text-slate-200 text-xs focus:border-[#FF5500] focus:ring-1 focus:ring-[#FF5500]/40 focus:outline-none cursor-pointer transition-all"
                         >
                           <option value="New">New</option>
                           <option value="Contacted">Contacted</option>
@@ -276,13 +280,85 @@ export default function AdminDashboard() {
           </div>
         )}
 
+        {/* Tab: Diet Plan Orders Inbox */}
+        {activeTab === "diet" && (
+          <div className="bg-[#0E121B] border border-white/[0.08] rounded-3xl p-6 sm:p-8 shadow-xl">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+              <div>
+                <h3 className="text-xl font-bold text-white uppercase font-space flex items-center gap-2">
+                  <Utensils className="w-5 h-5 text-[#FF5500]" />
+                  Customized Diet Blueprint Orders
+                </h3>
+                <p className="text-xs text-slate-400 mt-1">
+                  Requests submitted from the Diet Plans page (Weight Loss: ₹99 | Weight Gain: ₹129).
+                </p>
+              </div>
+            </div>
+
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-xs">
+                <thead>
+                  <tr className="border-b border-white/10 text-slate-400 font-bold uppercase tracking-wider">
+                    <th className="pb-3.5">Athlete Name</th>
+                    <th className="pb-3.5">Age</th>
+                    <th className="pb-3.5">Contact Number</th>
+                    <th className="pb-3.5">Plan & Price</th>
+                    <th className="pb-3.5">Preference</th>
+                    <th className="pb-3.5">Goal & Allergies</th>
+                    <th className="pb-3.5">Status</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/5">
+                  {dietRequests.map((req) => (
+                    <tr key={req.id} className="hover:bg-white/[0.02] transition-colors">
+                      <td className="py-4 font-bold text-white font-space">
+                        {req.fullName}
+                      </td>
+                      <td className="py-4 text-slate-300">
+                        {req.age} yrs
+                      </td>
+                      <td className="py-4 font-mono text-slate-200">
+                        {req.contactNumber}
+                      </td>
+                      <td className="py-4">
+                        <span className="font-bold text-white block">{req.planName}</span>
+                        <span className="text-[#FF5500] font-black">{req.formattedPrice}</span>
+                      </td>
+                      <td className="py-4">
+                        <span
+                          className={`px-2 py-0.5 rounded-full text-[10px] font-bold uppercase ${
+                            req.dietaryPreference === "Vegetarian"
+                              ? "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30"
+                              : "bg-[#FF5500]/15 text-[#FF5500] border border-[#FF5500]/30"
+                          }`}
+                        >
+                          {req.dietaryPreference}
+                        </span>
+                      </td>
+                      <td className="py-4 text-slate-300 max-w-xs">
+                        <div className="font-medium text-white">{req.fitnessGoal}</div>
+                        <div className="text-[11px] text-slate-400">Allergies: {req.foodAllergies}</div>
+                      </td>
+                      <td className="py-4">
+                        <span className="px-2.5 py-1 rounded-full font-bold text-[10px] uppercase tracking-wider inline-block bg-[#FF5500]/10 text-[#FF5500] border border-[#FF5500]/30">
+                          {req.status}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+
         {/* Tab 2: Members Directory */}
         {activeTab === "members" && (
           <div className="bg-[#0E121B] border border-white/[0.08] rounded-3xl p-6 sm:p-8 shadow-xl">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
               <div>
                 <h3 className="text-xl font-bold text-white uppercase font-space flex items-center gap-2">
-                  <Users className="w-5 h-5 text-[#00F08B]" />
+                  <Users className="w-5 h-5 text-[#FF5500]" />
                   Member Management Roster
                 </h3>
                 <p className="text-xs text-slate-400 mt-1">
@@ -296,7 +372,7 @@ export default function AdminDashboard() {
                   placeholder="Search athlete, email or plan..."
                   value={searchMemberQuery}
                   onChange={(e) => setSearchMemberQuery(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2 rounded-xl bg-[#08090D] border border-white/10 text-white text-xs placeholder:text-slate-500 focus:border-[#00F08B] focus:ring-1 focus:ring-[#00F08B]/40 focus:outline-none transition-all"
+                  className="w-full pl-9 pr-4 py-2 rounded-xl bg-[#07080A] border border-white/10 text-white text-xs placeholder:text-slate-500 focus:border-[#FF5500] focus:ring-1 focus:ring-[#FF5500]/40 focus:outline-none transition-all"
                 />
                 <Search className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
               </div>
@@ -322,7 +398,7 @@ export default function AdminDashboard() {
                         <div className="font-bold text-white text-sm">{m.fullName}</div>
                         <div className="text-[11px] text-slate-400">{m.email}</div>
                       </td>
-                      <td className="py-4 font-bold text-[#00F08B]">{m.membershipPlanName}</td>
+                      <td className="py-4 font-bold text-[#FF5500]">{m.membershipPlanName}</td>
                       <td className="py-4 uppercase font-mono text-slate-300">{m.billingCycle}</td>
                       <td className="py-4 font-mono">
                         <span className="px-2 py-0.5 rounded-md bg-white/[0.04] border border-white/[0.08] text-slate-400 text-[11px]">
@@ -337,7 +413,7 @@ export default function AdminDashboard() {
                         <span
                           className={`px-2.5 py-1 rounded-full font-bold text-[10px] uppercase tracking-wider inline-block ${
                             m.status === "Active"
-                              ? "bg-[#00F08B]/15 text-[#00F08B] border border-[#00F08B]/30"
+                              ? "bg-[#FF5500]/15 text-[#FF5500] border border-[#FF5500]/30"
                               : "bg-amber-500/15 text-amber-300 border border-amber-500/30"
                           }`}
                         >
@@ -348,7 +424,7 @@ export default function AdminDashboard() {
                         <button
                           type="button"
                           onClick={() => alert(`Reviewing biometric telemetry for ${m.fullName}`)}
-                          className="px-2.5 py-1 rounded-lg bg-[#00F08B]/10 hover:bg-[#00F08B]/20 text-[#00F08B] font-bold text-xs transition-colors cursor-pointer border border-[#00F08B]/30"
+                          className="px-2.5 py-1 rounded-lg bg-[#FF5500]/10 hover:bg-[#FF5500]/20 text-[#FF5500] font-bold text-xs transition-colors cursor-pointer border border-[#FF5500]/30"
                         >
                           Telemetry
                         </button>
@@ -366,7 +442,7 @@ export default function AdminDashboard() {
           <div className="bg-[#0E121B] border border-white/[0.08] rounded-3xl p-6 sm:p-8 shadow-xl">
             <div className="mb-6">
               <h3 className="text-xl font-bold text-white uppercase font-space flex items-center gap-2">
-                <CreditCard className="w-5 h-5 text-[#00F08B]" />
+                <CreditCard className="w-5 h-5 text-[#FF5500]" />
                 Membership Pricing Architecture
               </h3>
               <p className="text-xs text-slate-400 mt-1">
@@ -385,7 +461,7 @@ export default function AdminDashboard() {
                       <span className="text-base font-black text-white uppercase font-space">
                         {plan.name}
                       </span>
-                      {plan.isPopular && <Badge variant="lime">POPULAR</Badge>}
+                      {plan.isPopular && <Badge variant="orange">POPULAR</Badge>}
                     </div>
 
                     <p className="text-xs text-slate-400 mb-6">{plan.tagline}</p>
@@ -397,7 +473,7 @@ export default function AdminDashboard() {
                       </div>
                       <div className="flex justify-between items-center text-xs">
                         <span className="text-slate-400">Annual Rate:</span>
-                        <span className="font-bold text-[#00F08B] font-mono text-sm">{formatINR(plan.yearlyPrice)}</span>
+                        <span className="font-bold text-[#FF5500] font-mono text-sm">{formatINR(plan.yearlyPrice)}</span>
                       </div>
                     </div>
                   </div>
@@ -425,15 +501,15 @@ export default function AdminDashboard() {
         {activeTab === "trainers" && (
           <div className="bg-[#0E121B] border border-white/[0.08] rounded-3xl p-6 sm:p-8 shadow-xl">
             <h3 className="text-xl font-bold text-white uppercase font-space mb-6 flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-[#00F08B]" />
+              <Sparkles className="w-5 h-5 text-[#FF5500]" />
               Coaching Staff Roster & Client Allocation
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {TRAINERS.map((t) => (
-                <div key={t.id} className="p-5 rounded-2xl bg-[#111622] border border-white/[0.08] hover:border-[#00F08B]/30 transition-all flex items-center justify-between shadow-md">
+                <div key={t.id} className="p-5 rounded-2xl bg-[#111622] border border-white/[0.08] hover:border-[#FF5500]/30 transition-all flex items-center justify-between shadow-md">
                   <div>
                     <h4 className="font-bold text-white text-base">{t.name}</h4>
-                    <p className="text-xs text-[#00F08B] font-semibold mt-0.5">{t.role}</p>
+                    <p className="text-xs text-[#FF5500] font-semibold mt-0.5">{t.role}</p>
                     <p className="text-xs text-slate-400 mt-1">{t.specialization}</p>
                   </div>
                   <div className="text-right">
@@ -450,7 +526,7 @@ export default function AdminDashboard() {
         {activeTab === "programs" && (
           <div className="bg-[#0E121B] border border-white/[0.08] rounded-3xl p-6 sm:p-8 shadow-xl">
             <h3 className="text-xl font-bold text-white uppercase font-space mb-6 flex items-center gap-2">
-              <Layers className="w-5 h-5 text-[#00F08B]" />
+              <Layers className="w-5 h-5 text-[#FF5500]" />
               Active Performance Protocols
             </h3>
             <div className="space-y-3">
@@ -461,7 +537,7 @@ export default function AdminDashboard() {
                     <p className="text-xs text-slate-400 mt-0.5">{p.shortDescription}</p>
                   </div>
                   <div className="flex items-center gap-4 text-xs">
-                    <span className="font-mono font-semibold text-[#00F08B]">{p.duration}</span>
+                    <span className="font-mono font-semibold text-[#FF5500]">{p.duration}</span>
                     <Badge variant="dark">{p.difficulty}</Badge>
                   </div>
                 </div>
@@ -490,7 +566,7 @@ export default function AdminDashboard() {
                 required
                 value={editPriceMonthly}
                 onChange={(e) => setEditPriceMonthly(Number(e.target.value))}
-                className="w-full px-4 py-2.5 rounded-xl bg-[#08090D] border border-white/10 text-white text-sm focus:border-[#00F08B] focus:ring-1 focus:ring-[#00F08B]/40 focus:outline-none transition-all"
+                className="w-full px-4 py-2.5 rounded-xl bg-[#07080A] border border-white/10 text-white text-sm focus:border-[#FF5500] focus:ring-1 focus:ring-[#FF5500]/40 focus:outline-none transition-all"
               />
             </div>
 
@@ -503,7 +579,7 @@ export default function AdminDashboard() {
                 required
                 value={editPriceYearly}
                 onChange={(e) => setEditPriceYearly(Number(e.target.value))}
-                className="w-full px-4 py-2.5 rounded-xl bg-[#08090D] border border-white/10 text-white text-sm focus:border-[#00F08B] focus:ring-1 focus:ring-[#00F08B]/40 focus:outline-none transition-all"
+                className="w-full px-4 py-2.5 rounded-xl bg-[#07080A] border border-white/10 text-white text-sm focus:border-[#FF5500] focus:ring-1 focus:ring-[#FF5500]/40 focus:outline-none transition-all"
               />
             </div>
 
@@ -521,5 +597,3 @@ export default function AdminDashboard() {
     </div>
   );
 }
-
-

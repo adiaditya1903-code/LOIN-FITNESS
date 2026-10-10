@@ -74,7 +74,7 @@ export default function HeroDumbbellCanvas() {
     scene.add(keyLight);
 
     // Cyan/Lime Rim Light
-    const rimLight = new THREE.DirectionalLight(0x10ffa0, 2.2);
+    const rimLight = new THREE.DirectionalLight(0xff5500, 2.2);
     rimLight.position.set(-6, -2, -3);
     scene.add(rimLight);
 
@@ -110,7 +110,7 @@ export default function HeroDumbbellCanvas() {
 
     particleGeo.setAttribute("position", new THREE.BufferAttribute(positions, 3));
     const particleMat = new THREE.PointsMaterial({
-      color: 0x10ffa0,
+      color: 0xff5500,
       size: 0.05,
       transparent: true,
       opacity: 0.5,
@@ -217,12 +217,12 @@ export default function HeroDumbbellCanvas() {
   if (!hasWebGL) {
     return (
       <div className="w-full h-full min-h-[420px] flex flex-col items-center justify-center p-8 rounded-3xl border border-white/10 bg-gradient-to-b from-[#121620] to-[#07080A] text-center">
-        <div className="w-32 h-32 rounded-full bg-[#10FFA0]/10 border border-[#10FFA0]/30 flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(16,255,160,0.2)]">
-          <svg className="w-16 h-16 text-[#10FFA0]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="w-32 h-32 rounded-full bg-[#FF5500]/10 border border-[#FF5500]/30 flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(255,85,0,0.2)]">
+          <svg className="w-16 h-16 text-[#FF5500]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
           </svg>
         </div>
-        <p className="text-sm font-semibold tracking-wider uppercase text-[#10FFA0]">DITO High-Grade Dumbbell</p>
+        <p className="text-sm font-semibold tracking-wider uppercase text-[#FF5500]">FOREVER High-Grade Dumbbell</p>
         <p className="text-xs text-slate-400 mt-1">Procedural 3D Model Optimized</p>
       </div>
     );
@@ -232,7 +232,7 @@ export default function HeroDumbbellCanvas() {
     <div className="relative w-full h-[460px] lg:h-[580px] flex items-center justify-center">
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center text-xs text-slate-400">
-          <div className="w-6 h-6 border-2 border-[#10FFA0] border-t-transparent rounded-full animate-spin mr-3" />
+          <div className="w-6 h-6 border-2 border-[#FF5500] border-t-transparent rounded-full animate-spin mr-3" />
           Initializing 3D Engine...
         </div>
       )}
