@@ -27,7 +27,7 @@ export default function FinalCtaSection() {
         </h2>
 
         <p className="text-lg sm:text-xl text-slate-300 max-w-xl mx-auto mb-10 leading-relaxed font-normal">
-          Stop waiting for motivation. Start building momentum at FOREVER FITNESS.
+          Stop waiting for motivation. Start building momentum at LION FITNESS.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -46,7 +46,7 @@ export default function FinalCtaSection() {
         </div>
 
         <p className="text-xs text-slate-400 uppercase tracking-widest mt-12 font-medium">
-          FOREVER FITNESS • PREMIUM TRAINING CLUB • 24/7 BIOMETRIC CAMPUS
+          LION FITNESS • BANGALORE • BUILD STRENGTH. TRANSFORM YOURSELF.
         </p>
       </div>
     </section>

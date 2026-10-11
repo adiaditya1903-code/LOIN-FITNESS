@@ -5,8 +5,8 @@ import DietPlansSection from "@/components/sections/DietPlansSection";
 import FinalCtaSection from "@/components/sections/FinalCtaSection";
 
 export const metadata: Metadata = {
-  title: "Diet Plans | FOREVER FITNESS • ALMATTI TO BAGALKOT",
-  description: "Personalized Weight Loss (₹99) and Weight Gain (₹129) diet blueprints customized for your fitness journey at FOREVER FITNESS.",
+  title: "Diet Plans | LION FITNESS • BANGALORE",
+  description: "Personalized Weight Loss Plan (₹99) and Weight Gain Plan (₹129) designed to support your fitness and nutrition goals at LION FITNESS.",
 };
 
 export default function DietPlansPage() {

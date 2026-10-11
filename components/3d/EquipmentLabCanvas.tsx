@@ -297,7 +297,7 @@ export default function EquipmentLabCanvas({
   }
 
   return (
-    <div className="relative w-full h-[400px] md:h-[480px] lg:h-[520px] rounded-2xl overflow-hidden bg-gradient-to-b from-[#171717] via-[#111111] to-[#080808] border border-white/10">
+    <div className="relative w-full h-[320px] sm:h-[400px] md:h-[480px] lg:h-[520px] rounded-2xl overflow-hidden bg-gradient-to-b from-[#171717] via-[#111111] to-[#080808] border border-white/10">
       {/* 3D Canvas element */}
       <div
         ref={containerRef}

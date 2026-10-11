@@ -16,7 +16,7 @@ export default function ContactSection() {
     phone: "",
     email: "",
     goal: "Muscle Gain",
-    preferredMembership: "FOREVER PRO",
+    preferredMembership: "LION PRO",
     preferredDate: "Tomorrow at 6:00 PM",
     message: "",
   });
@@ -37,7 +37,7 @@ export default function ContactSection() {
         goal: formData.goal,
         preferredMembership: formData.preferredMembership,
         preferredDate: formData.preferredDate,
-        message: formData.message || "Requested complimentary VIP facility tour and assessment.",
+        message: formData.message || "Requested complimentary club tour and consultation.",
       });
 
       setIsSubmitting(false);
@@ -56,19 +56,19 @@ export default function ContactSection() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/[0.1] mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-[#FF5500]" />
-            <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#FF5500]">
-              VIP EXPERIENCE PASS
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 border border-[#D4AF37]/40 mb-3">
+            <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
+            <span className="text-xs font-black uppercase tracking-[0.25em] text-[#D4AF37]">
+              CONNECT WITH US
             </span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white font-space mb-4">
-            READY TO <span className="text-[#FF5500]">START?</span>
+            CONTACT <span className="text-[#FF5500]">LION FITNESS</span>
           </h2>
 
           <p className="text-sm sm:text-base text-slate-300">
-            Book a private walkthrough of our facility, test the calibrated competition equipment, and receive an initial kinetic mobility consultation.
+            Have questions about training or our diet plans? Reach out to our team or book a complimentary tour of our Bangalore club.
           </p>
         </div>
 
@@ -78,8 +78,8 @@ export default function ContactSection() {
           {/* Left Column: Form */}
           <div className="lg:col-span-7 bg-[#0E121B] border border-white/[0.08] rounded-3xl p-6 sm:p-10 shadow-2xl">
             <h3 className="text-xl font-bold text-white mb-6 flex items-center justify-between font-space">
-              <span>Book Your Free Club Tour</span>
-              <Badge variant="orange">Complimentary Pass</Badge>
+              <span>Send a Message / Book Tour</span>
+              <Badge variant="orange">LION FITNESS</Badge>
             </h3>
 
             {submitted ? (
@@ -88,10 +88,10 @@ export default function ContactSection() {
                   <CheckCircle2 className="w-8 h-8 stroke-[2.5]" />
                 </div>
                 <h4 className="text-2xl font-black text-white font-space uppercase">
-                  VIP Tour Confirmed!
+                  Message Received!
                 </h4>
                 <p className="text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
-                  Thank you, <strong className="text-white">{formData.fullName}</strong>. Our head coach has reserved your slot for <strong className="text-[#FF5500]">{formData.preferredDate}</strong>. Confirmation SMS and digital locker pass dispatched to your contact details.
+                  Thank you, <strong className="text-white">{formData.fullName}</strong>. Our team has received your message and will contact you at <strong className="text-[#FF5500]">{formData.phone}</strong> shortly.
                 </p>
                 <div className="pt-4">
                   <Button
@@ -104,7 +104,7 @@ export default function ContactSection() {
                         phone: "",
                         email: "",
                         goal: "Muscle Gain",
-                        preferredMembership: "FOREVER PRO",
+                        preferredMembership: "LION PRO",
                         preferredDate: "Tomorrow at 6:00 PM",
                         message: "",
                       });
@@ -187,9 +187,9 @@ export default function ContactSection() {
                       onChange={(e) => setFormData({ ...formData, preferredMembership: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl bg-[#12151F] border border-white/10 text-white focus:border-[#FF5500] focus:outline-none text-sm cursor-pointer"
                     >
-                      <option value="FOREVER STARTER">FOREVER STARTER (₹2,999/mo)</option>
-                      <option value="FOREVER PRO">FOREVER PRO (₹4,999/mo)</option>
-                      <option value="FOREVER ELITE">FOREVER ELITE (₹7,999/mo)</option>
+                      <option value="LION STARTER">LION STARTER (₹999/mo)</option>
+                      <option value="LION PRO">LION PRO (₹1,999/mo)</option>
+                      <option value="LION ELITE">LION ELITE (₹3,499/mo)</option>
                     </select>
                   </div>
                 </div>
@@ -209,11 +209,12 @@ export default function ContactSection() {
 
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5">
-                    Additional Notes or Medical Considerations
+                    Your Message / Health Goals *
                   </label>
                   <textarea
                     rows={3}
-                    placeholder="Tell us about previous training history, joint injuries, or specific athletic goals..."
+                    required
+                    placeholder="Tell us about your fitness targets, preferred training style, or questions regarding our diet plans..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     className="w-full px-4 py-3 rounded-xl bg-[#12151F] border border-white/10 text-white placeholder:text-slate-500 focus:border-[#FF5500] focus:outline-none text-sm resize-none"
@@ -229,13 +230,13 @@ export default function ContactSection() {
                     className="w-full"
                     disabled={isSubmitting}
                   >
-                    <span>{isSubmitting ? "Dispatching VIP Pass..." : "Confirm Free VIP Tour & Assessment"}</span>
+                    <span>{isSubmitting ? "Sending Message..." : "Send Message & Book Tour"}</span>
                     <Send className="w-4 h-4 ml-1" />
                   </Button>
                 </div>
 
                 <p className="text-[11px] text-slate-400 text-center pt-1">
-                  🔒 Zero spam policy. We only dispatch tour credentials and club schedule updates.
+                  🔒 Zero spam policy. We only dispatch tour details and schedule updates.
                 </p>
               </form>
             )}
@@ -257,7 +258,7 @@ export default function ContactSection() {
                   <div>
                     <h5 className="font-bold text-white uppercase tracking-wider text-xs mb-0.5">LOCATION</h5>
                     <p className="text-slate-200 font-semibold leading-relaxed uppercase">
-                      ALMATTI TO BAGALKOT
+                      BANGALORE
                     </p>
                   </div>
                 </div>
@@ -289,7 +290,7 @@ export default function ContactSection() {
                       rel="noopener noreferrer"
                       className="text-[#FF5500] font-bold hover:underline inline-flex items-center gap-1"
                     >
-                      <span>@foreverfitness</span>
+                      <span>@lionfitness</span>
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   </div>
@@ -307,7 +308,7 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              {/* Map Section: Almatti to Bagalkot */}
+              {/* Map Section: Bangalore */}
               <div className="space-y-2 pt-2 border-t border-white/10">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-1.5">
@@ -315,7 +316,7 @@ export default function ContactSection() {
                     <span>Club Map & Directions</span>
                   </span>
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=Almatti+to+Bagalkot+Karnataka"
+                    href="https://www.google.com/maps/search/?api=1&query=Bangalore+Karnataka"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[11px] font-bold text-[#FF5500] hover:underline flex items-center gap-1"
@@ -326,14 +327,14 @@ export default function ContactSection() {
                 </div>
                 <div className="w-full h-44 rounded-2xl overflow-hidden border border-white/10 bg-[#08090D] relative">
                   <iframe
-                    title="Bagalkot Location Map"
-                    src="https://maps.google.com/maps?q=Almatti+to+Bagalkot,+Karnataka&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                    title="Bangalore Location Map"
+                    src="https://maps.google.com/maps?q=Bangalore,+Karnataka&t=&z=14&ie=UTF8&iwloc=&output=embed"
                     className="w-full h-full border-0 filter grayscale contrast-125 opacity-90 hover:opacity-100 transition-opacity"
                     loading="lazy"
                   />
                 </div>
                 <p className="text-[11px] text-slate-400 uppercase font-semibold">
-                  ALMATTI TO BAGALKOT
+                  BANGALORE
                 </p>
               </div>
             </div>

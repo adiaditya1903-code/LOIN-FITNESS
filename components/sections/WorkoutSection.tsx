@@ -112,7 +112,7 @@ export default function WorkoutSection() {
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white font-space">
-            TODAY&apos;S <span className="text-[#FF5500]">FOREVER WORKOUT.</span>
+            TODAY&apos;S <span className="text-[#FF5500]">LION WORKOUT.</span>
           </h2>
           <p className="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed">
             Interactive weekly telemetry tracker. Select any training day, log your sets live, and synchronize rest timers.
@@ -120,8 +120,8 @@ export default function WorkoutSection() {
         </div>
 
         {/* 7-Day Selector Bar */}
-        <div className="flex items-center justify-center mb-10">
-          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 p-1.5 sm:p-2 rounded-2xl bg-[#0E121B] border border-white/[0.08] shadow-2xl">
+        <div className="flex items-center justify-center mb-10 w-full overflow-hidden">
+          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 p-1.5 sm:p-2 rounded-2xl bg-[#0E121B] border border-white/[0.08] shadow-2xl max-w-full">
             {DAYS.map((day) => {
               const isActive = selectedDay === day.key;
               return (

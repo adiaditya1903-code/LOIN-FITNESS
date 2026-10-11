@@ -72,11 +72,11 @@ export default function MembershipSection() {
           </p>
 
           {/* Billing Cycle Switcher */}
-          <div className="mt-8 inline-flex items-center p-1.5 rounded-2xl bg-[#0E121B] border border-white/[0.1] shadow-xl">
+          <div className="mt-8 inline-flex max-w-full items-center p-1 sm:p-1.5 rounded-2xl bg-[#0E121B] border border-white/[0.1] shadow-xl">
             <button
               type="button"
               onClick={() => setBillingCycle("monthly")}
-              className={`px-6 py-2 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
+              className={`px-3.5 sm:px-6 py-2 rounded-xl text-[11px] sm:text-xs md:text-sm font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                 billingCycle === "monthly"
                   ? "bg-gradient-to-r from-[#FF5500] to-[#FF3D00] text-white shadow-md shadow-[#FF5500]/25"
                   : "text-slate-400 hover:text-white"
@@ -88,14 +88,14 @@ export default function MembershipSection() {
             <button
               type="button"
               onClick={() => setBillingCycle("yearly")}
-              className={`px-6 py-2 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer flex items-center gap-2 ${
+              className={`px-3.5 sm:px-6 py-2 rounded-xl text-[11px] sm:text-xs md:text-sm font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer flex items-center gap-1.5 sm:gap-2 ${
                 billingCycle === "yearly"
                   ? "bg-gradient-to-r from-[#FF5500] to-[#FF3D00] text-white shadow-md shadow-[#FF5500]/25"
                   : "text-slate-400 hover:text-white"
               }`}
             >
               <span>Annual Billing</span>
-              <span className="px-2 py-0.5 rounded-full text-[10px] font-black uppercase bg-[#08090D] text-[#FF5500]">
+              <span className="hidden xs:inline-block px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-black uppercase bg-[#08090D] text-[#FF5500]">
                 Save ~17%
               </span>
             </button>
@@ -231,7 +231,7 @@ export default function MembershipSection() {
                 Membership Activated!
               </h4>
               <p className="text-xs sm:text-sm text-slate-300 max-w-sm mx-auto">
-                Welcome to FOREVER FITNESS. Your digital telemetry pass has been generated and provisioned.
+                Welcome to LION FITNESS. Your digital telemetry pass has been generated and provisioned.
               </p>
               <div className="pt-4">
                 <Link href="/member">
@@ -277,7 +277,7 @@ export default function MembershipSection() {
                 <input
                   type="email"
                   required
-                  placeholder="athlete@foreverfitness.com"
+                  placeholder="athlete@lionfitness.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full px-4 py-2.5 rounded-xl bg-[#12151F] border border-white/10 text-white placeholder:text-slate-500 focus:border-[#FF5500] focus:outline-none text-xs sm:text-sm"

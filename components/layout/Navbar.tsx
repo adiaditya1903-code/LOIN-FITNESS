@@ -2,17 +2,15 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   Phone,
   MapPin,
   X,
-  Dumbbell,
   User,
   ArrowRight,
-  Flame,
   ShieldCheck,
-  Utensils
 } from "lucide-react";
 import { InstagramIcon, YoutubeIcon, FacebookIcon } from "@/components/ui/SocialIcons";
 
@@ -47,7 +45,7 @@ export default function Navbar() {
           }`}
       >
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
-          {/* Left: Official FOREVER FITNESS Contact Details */}
+          {/* Left: Official LION FITNESS Contact Details */}
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6 text-slate-300">
             <a
               href="tel:+916363561751"
@@ -62,7 +60,7 @@ export default function Navbar() {
             <div className="flex items-center gap-1.5 text-slate-300">
               <MapPin className="w-3.5 h-3.5 text-[#FF5500]" />
               <span className="tracking-wide uppercase font-semibold text-slate-200">
-                ALMATTI TO BAGALKOT
+                BANGALORE
               </span>
             </div>
 
@@ -75,18 +73,18 @@ export default function Navbar() {
               className="hidden lg:flex items-center gap-1.5 hover:text-[#FF5500] transition-colors text-slate-300"
             >
               <InstagramIcon className="w-3.5 h-3.5 text-[#FF5500]" />
-              <span className="tracking-wide font-medium">@foreverfitness</span>
+              <span className="tracking-wide font-medium">@lionfitness</span>
             </a>
           </div>
 
           {/* Right Social Icons */}
-          <div className="flex items-center gap-4 text-slate-400">
+          <div className="hidden sm:flex items-center gap-4 text-slate-400">
             <a
               href="https://www.instagram.com"
               target="_blank"
               rel="noreferrer"
               className="hover:text-[#FF5500] transition-colors"
-              aria-label="Instagram @foreverfitness"
+              aria-label="Instagram @lionfitness"
             >
               <InstagramIcon className="w-3.5 h-3.5" />
             </a>
@@ -126,17 +124,24 @@ export default function Navbar() {
             <Link
               href="/"
               className="flex items-center gap-3 select-none group"
-              aria-label="FOREVER FITNESS Homepage"
+              aria-label="LION FITNESS Homepage"
             >
-              {/* Orange Athletic Emblem */}
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#FF5500] to-[#E53E00] flex items-center justify-center shadow-[0_0_20px_rgba(255,85,0,0.45)] group-hover:scale-105 transition-transform duration-300 border border-white/20">
-                <Dumbbell className="w-5 h-5 text-white rotate-45" />
+              {/* Lion Fitness Official Logo */}
+              <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-[#D4AF37]/70 shadow-[0_0_20px_rgba(212,175,55,0.4)] bg-black shrink-0 group-hover:scale-105 transition-transform duration-300">
+                <Image
+                  src="/lion-fitness-logo.jpg"
+                  alt="Lion Fitness Logo"
+                  fill
+                  sizes="48px"
+                  className="object-cover"
+                  priority
+                />
               </div>
 
               {/* Logo Typography */}
               <div className="flex flex-col">
                 <span className="text-xl sm:text-2xl font-black tracking-wider text-white uppercase leading-none font-space">
-                  FOREVER
+                  LION
                 </span>
                 <span className="text-[11px] sm:text-xs font-black tracking-[0.24em] text-[#FF5500] uppercase leading-none mt-1">
                   FITNESS
@@ -144,11 +149,11 @@ export default function Navbar() {
               </div>
             </Link>
 
-            {/* Location Tag from reference design */}
+            {/* Location Tag */}
             <div className="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-slate-300">
               <MapPin className="w-3.5 h-3.5 text-[#FF5500]" />
               <span className="font-bold tracking-wide uppercase text-[11px] text-slate-200">
-                TO BAGALKOT
+                BANGALORE
               </span>
             </div>
           </div>
@@ -209,8 +214,8 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Right Bar */}
-          <div className="flex items-center gap-2.5 lg:hidden">
-            <Link href="/member">
+          <div className="flex items-center gap-2 lg:hidden">
+            <Link href="/member" className="hidden sm:inline-block">
               <button
                 type="button"
                 className="p-2 rounded-xl bg-white/5 text-slate-300 hover:text-white border border-white/10 text-xs"
@@ -223,7 +228,7 @@ export default function Navbar() {
             <a href="#membership">
               <button
                 type="button"
-                className="px-3.5 py-2 bg-[#FF5500] text-white font-black text-xs uppercase tracking-wider rounded-xl shadow-md"
+                className="px-3 py-2 bg-[#FF5500] text-white font-black text-xs uppercase tracking-wider rounded-xl shadow-md cursor-pointer"
               >
                 JOIN
               </button>
@@ -232,7 +237,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="w-9 h-9 bg-[#FF5500] rounded-xl flex items-center justify-center text-white focus:outline-none cursor-pointer shadow-md"
+              className="w-10 h-10 bg-[#FF5500] rounded-xl flex items-center justify-center text-white focus:outline-none cursor-pointer shadow-md"
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
             >
@@ -295,7 +300,7 @@ export default function Navbar() {
               </a>
               <div className="flex items-start gap-2">
                 <MapPin className="w-3.5 h-3.5 text-[#FF5500] shrink-0 mt-0.5" />
-                <span className="uppercase font-semibold text-slate-200">ALMATTI TO BAGALKOT</span>
+                <span className="uppercase font-semibold text-slate-200">BANGALORE</span>
               </div>
             </div>
           </div>

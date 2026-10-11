@@ -32,7 +32,7 @@ export default function TrainersSection() {
           </div>
 
           <p className="text-xs text-[#94A3B8] max-w-sm">
-            All FOREVER FITNESS faculty hold CSCS and exercise science degrees. Biomechanical rigor, bar velocity tracking, and periodized athletic preparation.
+            All LION FITNESS coaches focus on proper lifting technique, movement safety, and structured athletic preparation.
           </p>
         </div>
 

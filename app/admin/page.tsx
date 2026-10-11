@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { MockDb, TourInquiry, MemberProfile, DietPlanRequest } from "@/lib/mock-db";
 import { MembershipPlan } from "@/data/memberships";
 import { TRAINERS } from "@/data/trainers";
@@ -78,16 +79,22 @@ export default function AdminDashboard() {
       <header className="sticky top-0 z-30 bg-[#0E121B]/95 backdrop-blur-xl border-b border-white/[0.08] px-4 sm:px-8 py-3.5 flex items-center justify-between shadow-lg shadow-black/40">
         <div className="flex items-center gap-4">
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#FF5500] to-[#FF3D00] flex items-center justify-center shadow-md shadow-[#FF5500]/25 group-hover:scale-105 transition-transform">
-              <Dumbbell className="w-4 h-4 text-white rotate-45 stroke-[2.5]" />
+            <div className="relative w-9 h-9 rounded-full overflow-hidden border border-[#D4AF37] shadow-md shadow-[#D4AF37]/30 group-hover:scale-105 transition-transform flex-shrink-0 bg-black">
+              <Image
+                src="/lion-fitness-logo.jpg"
+                alt="Lion Fitness Logo"
+                fill
+                className="object-cover"
+                sizes="36px"
+              />
             </div>
             <span className="text-base sm:text-lg font-black tracking-wider text-white font-space">
-              FOREVER <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5500] to-[#FF8C00]">COMMAND</span>
+              LION <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5500] to-[#FF8C00]">COMMAND</span>
             </span>
           </Link>
           <span className="hidden sm:inline-flex items-center gap-1.5 text-[11px] font-bold px-3 py-1 rounded-full bg-[#FF5500]/10 text-[#FF5500] border border-[#FF5500]/30 font-mono tracking-wider">
             <span className="w-1.5 h-1.5 rounded-full bg-[#FF5500] animate-pulse"></span>
-            ROOT ACCESS • BAGALKOT
+            ROOT ACCESS • BANGALORE
           </span>
         </div>
 

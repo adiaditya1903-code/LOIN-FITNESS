@@ -20,7 +20,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "Software Architect",
     program: "Strength & Conditioning",
     rating: 5,
-    quote: "FOREVER FITNESS completely changed how I approach training. The equipment quality, telemetry tracking, and coach guidance helped me add 40kg to my deadlift while staying injury-free.",
+    quote: "LION FITNESS completely changed how I approach training. The equipment quality, structured workouts, and coach guidance helped me add 40kg to my deadlift while staying injury-free.",
     highlight: "Shattered my plateau in 12 weeks",
     timeframe: "Member for 14 months",
     stats: {
@@ -34,7 +34,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "Product Designer",
     program: "Fat Loss & Hybrid Athlete",
     rating: 5,
-    quote: "The environment is intensely motivating without any of the typical gym chaos. Every coach knows their biomechanics inside out, and the facility feels like a futuristic training lab.",
+    quote: "The environment is intensely motivating without any of the typical gym chaos. Every coach knows their training principles inside out, and the facility feels like a true fitness sanctuary.",
     highlight: "Unmatched athletic atmosphere",
     timeframe: "Member for 9 months",
     stats: {
@@ -46,9 +46,9 @@ export const TESTIMONIALS: Testimonial[] = [
     id: "t3",
     name: "Rohan Varma",
     role: "Entrepreneur",
-    program: "FOREVER Elite 1-on-1",
+    program: "LION Elite 1-on-1",
     rating: 5,
-    quote: "With 60+ hour work weeks, efficiency is non-negotiable. FOREVER PRO eliminated guesswork with bespoke nutrition and structured 45-minute sessions that deliver tangible weekly results.",
+    quote: "With 60+ hour work weeks, efficiency is non-negotiable. LION PRO eliminated guesswork with bespoke nutrition and structured 45-minute sessions that deliver tangible weekly results.",
     highlight: "Maximum ROI on training time",
     timeframe: "Member for 2 years",
     stats: {

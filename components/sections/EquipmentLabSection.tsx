@@ -32,7 +32,7 @@ export default function EquipmentLabSection() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-white font-space mb-4">
-            THE FOREVER <span className="text-[#FF5500]">EQUIPMENT LAB.</span>
+            THE LION <span className="text-[#FF5500]">EQUIPMENT LAB.</span>
           </h2>
 
           <p className="text-sm sm:text-base text-slate-300">
@@ -49,7 +49,7 @@ export default function EquipmentLabSection() {
                 key={item.id}
                 type="button"
                 onClick={() => setSelectedId(item.id)}
-                className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer flex items-center gap-2 ${
+                className={`px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs md:text-sm font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer flex items-center gap-1.5 sm:gap-2 ${
                   isSelected
                     ? "bg-gradient-to-r from-[#FF5500] to-[#FF3D00] text-white shadow-[0_0_25px_rgba(255,85,0,0.4)] scale-105"
                     : "bg-[#0E121B] text-slate-300 border border-white/[0.08] hover:border-white/20 hover:text-white"

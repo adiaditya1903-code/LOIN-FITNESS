@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 
@@ -14,13 +14,20 @@ const inter = Inter({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#07080A",
+};
+
 export const metadata: Metadata = {
-  title: "FOREVER FITNESS | BUILD YOUR BEST SELF",
-  description: "Train harder, get stronger, and transform your lifestyle with expert coaching and personalized fitness and diet programs at FOREVER FITNESS Bagalkot.",
-  keywords: ["FOREVER FITNESS", "Forever Fitness Gym", "Bagalkot Gym", "Almatti to Bagalkot", "fitness", "bodybuilding", "strength training", "personal trainer", "Karnataka gym"],
+  title: "LION FITNESS | Build Strength. Transform Yourself.",
+  description: "LION FITNESS offers fitness guidance, affordable diet plans, and nutrition support to help you work toward your fitness goals.",
+  keywords: ["LION FITNESS", "Lion Fitness Gym", "Bangalore Gym", "Bangalore", "fitness", "bodybuilding", "strength training", "personal trainer", "diet plans", "weight loss", "weight gain", "Karnataka gym"],
   openGraph: {
-    title: "FOREVER FITNESS | BUILD YOUR BEST SELF",
-    description: "Train harder, get stronger, and transform your lifestyle with expert coaching and personalized fitness programs at FOREVER FITNESS Bagalkot.",
+    title: "LION FITNESS | Build Strength. Transform Yourself.",
+    description: "LION FITNESS offers fitness guidance, affordable diet plans, and nutrition support to help you work toward your fitness goals.",
     type: "website",
   },
 };

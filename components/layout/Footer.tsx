@@ -2,7 +2,8 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Dumbbell, ArrowUpRight, MapPin, Phone, Clock, ShieldCheck, FileText, CheckCircle2, AlertTriangle } from "lucide-react";
+import Image from "next/image";
+import { ArrowUpRight, MapPin, Phone, Clock, ShieldCheck, FileText, CheckCircle2, AlertTriangle } from "lucide-react";
 import { InstagramIcon, YoutubeIcon, FacebookIcon } from "@/components/ui/SocialIcons";
 import { Modal } from "@/components/ui/Modal";
 import { Button } from "@/components/ui/Button";
@@ -15,25 +16,36 @@ export default function Footer() {
   return (
     <footer className="bg-[#06070A] border-t border-white/[0.08] relative overflow-hidden">
       {/* Ambient gradient */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-[#FF5500]/50 to-transparent" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-white/[0.06]">
           {/* Col 1: Brand Info */}
           <div className="lg:col-span-2 flex flex-col gap-4">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#FF5500] to-[#E53E00] flex items-center justify-center shadow-[0_0_20px_rgba(255,85,0,0.4)]">
-                <Dumbbell className="w-5 h-5 text-white rotate-45" />
+            <Link href="/" className="flex items-center gap-3.5 group">
+              <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#D4AF37]/70 shadow-[0_0_20px_rgba(212,175,55,0.4)] bg-black shrink-0 group-hover:scale-105 transition-transform duration-300">
+                <Image
+                  src="/lion-fitness-logo.jpg"
+                  alt="Lion Fitness Logo"
+                  fill
+                  sizes="48px"
+                  className="object-cover"
+                />
               </div>
-              <span className="text-2xl font-black tracking-wider text-white font-space">
-                FOREVER <span className="text-[#FF5500]">FITNESS</span>
-              </span>
+              <div className="flex flex-col">
+                <span className="text-2xl font-black tracking-wider text-white font-space leading-none uppercase">
+                  LION <span className="text-[#FF5500]">FITNESS</span>
+                </span>
+                <span className="text-[10px] tracking-[0.24em] text-[#D4AF37] uppercase font-bold mt-1">
+                  UNLEASH YOUR STRENGTH
+                </span>
+              </div>
             </Link>
-            <p className="text-xl font-bold tracking-tight text-slate-100 font-space uppercase mt-1">
-              BUILD YOUR STRONGEST VERSION.
+            <p className="text-lg font-black tracking-tight text-slate-100 font-space uppercase mt-1">
+              BUILD STRENGTH. TRANSFORM YOURSELF.
             </p>
             <p className="text-sm text-slate-300 max-w-sm leading-relaxed">
-              Train Hard. Move Better. Become Stronger. A state-of-the-art training sanctuary engineered with biomedical precision and athletic performance science in Bagalkot, Karnataka.
+              LION FITNESS is dedicated to helping people build strength, improve fitness, and develop healthier habits with accessible, personalized fitness and nutrition guidance in Bangalore.
             </p>
 
             <div className="flex items-center gap-3 pt-2">
@@ -42,7 +54,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-300 hover:text-[#FF5500] hover:border-[#FF5500]/40 hover:bg-[#FF5500]/5 transition-all cursor-pointer"
-                aria-label="Follow FOREVER FITNESS on Instagram"
+                aria-label="Follow LION FITNESS on Instagram"
               >
                 <InstagramIcon className="w-5 h-5" />
               </a>
@@ -51,7 +63,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-300 hover:text-[#FF5500] hover:border-[#FF5500]/40 hover:bg-[#FF5500]/5 transition-all cursor-pointer"
-                aria-label="Subscribe to FOREVER FITNESS on YouTube"
+                aria-label="Subscribe to LION FITNESS on YouTube"
               >
                 <YoutubeIcon className="w-5 h-5" />
               </a>
@@ -60,7 +72,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-slate-300 hover:text-[#FF5500] hover:border-[#FF5500]/40 hover:bg-[#FF5500]/5 transition-all cursor-pointer"
-                aria-label="Follow FOREVER FITNESS on Facebook"
+                aria-label="Follow LION FITNESS on Facebook"
               >
                 <FacebookIcon className="w-5 h-5" />
               </a>
@@ -75,7 +87,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-xs sm:text-sm text-slate-300">
               <li>
                 <a href="#about" className="hover:text-white transition-colors">
-                  About FOREVER
+                  About LION FITNESS
                 </a>
               </li>
               <li>
@@ -155,7 +167,7 @@ export default function Footer() {
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#FF5500] shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-white font-medium uppercase">ALMATTI TO BAGALKOT</p>
+                  <p className="text-white font-medium uppercase">BANGALORE</p>
                 </div>
               </li>
               <li className="flex items-center gap-2.5">
@@ -172,7 +184,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-white hover:text-[#FF5500] transition-colors"
                 >
-                  Instagram: @foreverfitness
+                  Instagram: @lionfitness
                 </a>
               </li>
               <li className="flex items-start gap-2.5">
@@ -188,7 +200,7 @@ export default function Footer() {
 
         {/* Legal & Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <p>© 2026 FOREVER FITNESS. All rights reserved.</p>
+          <p>© 2026 LION FITNESS. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <button 
               type="button"
@@ -222,7 +234,7 @@ export default function Footer() {
           onClose={() => setLegalModalTab(null)}
           title={
             legalModalTab === "privacy"
-              ? "FOREVER FITNESS PRIVACY POLICY"
+              ? "LION FITNESS PRIVACY POLICY"
               : legalModalTab === "terms"
               ? "TERMS & CONDITIONS"
               : "CLUB SAFETY & BIOMECHANICAL GUIDELINES"
@@ -237,7 +249,7 @@ export default function Footer() {
                   <span>Member Data Telemetry & Privacy Standards</span>
                 </div>
                 <p>
-                  At FOREVER FITNESS Bagalkot, we respect your privacy and safeguard all digital biometrics, workout logs, and attendance records.
+                  At LION FITNESS Bangalore, we respect your privacy and safeguard all digital biometrics, workout logs, and attendance records.
                 </p>
                 <h5 className="font-bold text-white text-xs uppercase tracking-wider text-[#FF5500]">1. Information We Collect</h5>
                 <p>

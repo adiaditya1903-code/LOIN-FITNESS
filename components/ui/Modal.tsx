@@ -50,7 +50,7 @@ export function Modal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto">
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-[#08090D]/85 backdrop-blur-xl transition-opacity duration-300"
@@ -62,14 +62,14 @@ export function Modal({
         role="dialog"
         aria-modal="true"
         className={cn(
-          "relative w-full z-10 bg-[#0E121B] border border-white/12 rounded-3xl p-6 sm:p-8 shadow-[0_30px_70px_rgba(0,0,0,0.85)] max-h-[90vh] overflow-y-auto",
+          "relative w-full z-10 bg-[#0E121B] border border-white/12 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-[0_30px_70px_rgba(0,0,0,0.85)] max-h-[92vh] overflow-y-auto",
           maxWidthStyles[maxWidth]
         )}
       >
         {/* Header */}
-        <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/[0.08]">
+        <div className="flex items-center justify-between pb-3 sm:pb-4 mb-3 sm:mb-4 border-b border-white/[0.08]">
           {title && (
-            <h3 className="text-lg sm:text-xl font-black text-white tracking-wide font-space uppercase">
+            <h3 className="text-base sm:text-xl font-black text-white tracking-wide font-space uppercase">
               {title}
             </h3>
           )}

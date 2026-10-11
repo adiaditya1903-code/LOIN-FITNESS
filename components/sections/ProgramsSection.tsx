@@ -185,7 +185,7 @@ export default function ProgramsSection() {
 
             <div className="pt-2 flex items-center justify-between border-t border-white/[0.08]">
               <span className="text-xs text-slate-400">
-                Included in FOREVER PRO and ELITE athlete memberships.
+                Included in LION PRO and ELITE athlete memberships.
               </span>
               <a href="#membership" onClick={() => setSelectedProgram(null)}>
                 <Button size="sm" variant="primary">

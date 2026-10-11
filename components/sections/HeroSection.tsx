@@ -16,8 +16,8 @@ export default function HeroSection() {
         {/* Real photographic athletes in modern dark gym */}
         <div className="relative w-full h-full">
           <Image
-            src="/forever-hero-athletes.jpg"
-            alt="FOREVER FITNESS Professional Male and Female Athletes Training in Modern Gym"
+            src="/lion-hero-athletes.jpg"
+            alt="LION FITNESS Professional Male and Female Athletes Training in Modern Gym"
             fill
             priority
             quality={75}
@@ -42,17 +42,17 @@ export default function HeroSection() {
           {/* Editorial Column: Left-aligned and balanced against the athletes on the right */}
           <div className="lg:col-span-8 xl:col-span-7 flex flex-col items-start text-left">
             
-            {/* Small Upper Location Badge */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 mb-4 backdrop-blur-md shadow-md">
-              <span className="w-2 h-2 rounded-full bg-[#FF5500] animate-pulse" />
-              <span className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.25em] text-[#FF5500]">
-                FOREVER FITNESS • ALMATTI TO BAGALKOT
+            {/* Small Upper Location Badge with Gold Accent */}
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-black/60 border border-[#D4AF37]/40 mb-4 backdrop-blur-md shadow-lg shadow-black/60">
+              <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
+              <span className="text-[11px] sm:text-xs font-black uppercase tracking-[0.25em] text-[#D4AF37]">
+                LION FITNESS • BANGALORE
               </span>
             </div>
 
-            {/* Main Headline: FOREVER FITNESS */}
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[84px] font-black uppercase tracking-tight leading-[0.92] text-white font-space mb-3 italic select-none drop-shadow-[0_15px_35px_rgba(0,0,0,0.9)] animate-in fade-in slide-in-from-bottom-2 duration-500">
-              FOREVER FITNESS
+            {/* Main Headline: LION FITNESS */}
+            <h1 className="text-3xl sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[84px] font-black uppercase tracking-tight leading-[0.92] text-white font-space mb-3 italic select-none drop-shadow-[0_15px_35px_rgba(0,0,0,0.9)] animate-in fade-in slide-in-from-bottom-2 duration-500">
+              LION FITNESS
             </h1>
 
             {/* Compelling Fitness Slogan: BUILD STRENGTH. TRANSFORM YOURSELF. */}
@@ -67,7 +67,7 @@ export default function HeroSection() {
 
             {/* Supporting Description */}
             <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-xl font-normal leading-relaxed mb-8 drop-shadow-md animate-in fade-in slide-in-from-bottom-4 duration-700">
-              Your fitness journey starts with the right plan. Discover personalized diet programs designed to support your fitness goals.
+              Welcome to LION FITNESS. Build strength, improve your fitness, and work toward your goals with personalized fitness and nutrition guidance.
             </p>
 
             {/* Interactive Call-to-Action Buttons */}
@@ -87,7 +87,7 @@ export default function HeroSection() {
               <Link href="/diet-plans" className="w-full sm:w-auto">
                 <button
                   type="button"
-                  className="w-full sm:w-auto px-7 sm:px-8 py-4 bg-black/60 hover:bg-white/10 text-white font-black text-xs sm:text-sm uppercase tracking-[0.2em] transition-all duration-300 border border-white/25 hover:border-white hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 cursor-pointer backdrop-blur-md rounded-xl"
+                  className="w-full sm:w-auto px-7 sm:px-8 py-4 bg-black/60 hover:bg-white/10 text-white font-black text-xs sm:text-sm uppercase tracking-[0.2em] transition-all duration-300 border border-[#D4AF37]/50 hover:border-[#D4AF37] hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 cursor-pointer backdrop-blur-md rounded-xl"
                 >
                   <span>EXPLORE DIET PLANS</span>
                 </button>
@@ -95,16 +95,16 @@ export default function HeroSection() {
             </div>
 
             {/* Trust Indicator: STRENGTH • FITNESS • TRANSFORMATION */}
-            <div className="pt-2 flex items-center gap-3 sm:gap-4 select-none">
-              <span className="h-[2px] w-8 sm:w-16 bg-[#FF5500]" />
-              <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-black tracking-[0.22em] uppercase text-white">
+            <div className="pt-2 flex flex-wrap items-center gap-2 sm:gap-4 select-none">
+              <span className="hidden sm:inline-block h-[2px] w-8 sm:w-16 bg-[#D4AF37]" />
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-[11px] sm:text-xs md:text-sm font-black tracking-[0.16em] sm:tracking-[0.22em] uppercase text-white">
                 <span>STRENGTH</span>
-                <span className="text-[#FF5500]">•</span>
+                <span className="text-[#D4AF37]">•</span>
                 <span>FITNESS</span>
                 <span className="text-[#FF5500]">•</span>
                 <span>TRANSFORMATION</span>
               </div>
-              <span className="h-[2px] w-8 sm:w-16 bg-[#FF5500]" />
+              <span className="hidden sm:inline-block h-[2px] w-8 sm:w-16 bg-[#D4AF37]" />
             </div>
 
           </div>

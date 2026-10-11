@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
-  Dumbbell,
   ShieldCheck,
   User,
   ArrowRight,
@@ -77,15 +77,14 @@ function AuthContent() {
         }
       } else {
         if (
-          loginEmail.toLowerCase() === "admin@foreverfitness.com" ||
-          loginEmail.toLowerCase() === "admin@forever.fit" ||
+          loginEmail.toLowerCase() === "admin@lionfitness.com" ||
           loginPassword === "admin123"
         ) {
           setIsLoginLoading(false);
           router.push("/admin");
         } else {
           setIsLoginLoading(false);
-          setLoginError("Invalid credentials. For staff demo, use: admin@foreverfitness.com (password: admin123)");
+          setLoginError("Invalid credentials. For staff demo, use: admin@lionfitness.com (password: admin123)");
         }
       }
     }, 500);
@@ -140,19 +139,26 @@ function AuthContent() {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center px-4 py-12 bg-[#07080A] bg-grid-pattern relative">
       {/* Ambient background glow */}
-      <div className="absolute w-[600px] h-[600px] bg-[#FF5500]/[0.04] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute w-[600px] h-[600px] bg-[#D4AF37]/[0.04] rounded-full blur-[160px] pointer-events-none" />
 
       {/* Brand Header */}
-      <Link href="/" className="flex items-center gap-3 mb-8 group select-none">
-        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#FF5500] to-[#FF3D00] flex items-center justify-center shadow-[0_0_20px_rgba(255,85,0,0.35)] group-hover:scale-105 transition-transform">
-          <Dumbbell className="w-5 h-5 text-white rotate-45 stroke-[2.5]" />
+      <Link href="/" className="flex items-center gap-3.5 mb-8 group select-none">
+        <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[#D4AF37]/70 shadow-[0_0_20px_rgba(212,175,55,0.4)] bg-black shrink-0 group-hover:scale-105 transition-transform duration-300">
+          <Image
+            src="/lion-fitness-logo.jpg"
+            alt="Lion Fitness Logo"
+            fill
+            sizes="48px"
+            className="object-cover"
+            priority
+          />
         </div>
         <div className="flex flex-col">
           <span className="text-2xl font-black tracking-tight text-white font-space uppercase">
-            FOREVER <span className="text-[#FF5500]">FITNESS</span>
+            LION <span className="text-[#FF5500]">FITNESS</span>
           </span>
-          <span className="text-[10px] tracking-[0.25em] text-[#A3A3A3] uppercase -mt-1 font-semibold">
-            Athletic Portal
+          <span className="text-[10px] tracking-[0.25em] text-[#D4AF37] uppercase -mt-0.5 font-bold">
+            ATHLETIC PORTAL
           </span>
         </div>
       </Link>
@@ -253,7 +259,7 @@ function AuthContent() {
                   <input
                     type="email"
                     required
-                    placeholder={loginRole === "member" ? "athlete@foreverfitness.com" : "admin@foreverfitness.com"}
+                    placeholder={loginRole === "member" ? "athlete@lionfitness.com" : "admin@lionfitness.com"}
                     value={loginEmail}
                     onChange={(e) => setLoginEmail(e.target.value)}
                     className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#07080A] border border-white/10 text-white placeholder:text-neutral-500 focus:border-[#FF5500] focus:outline-none text-sm"
@@ -318,7 +324,7 @@ function AuthContent() {
                   onClick={() => setActiveTab("register")}
                   className="text-[#FF5500] font-bold hover:underline cursor-pointer ml-1"
                 >
-                  Join FOREVER Fitness
+                  Join LION FITNESS
                 </button>
               </p>
             </div>
@@ -527,7 +533,7 @@ function AuthContent() {
 
       <div className="mt-8 text-center">
         <Link href="/" className="text-xs text-[#A3A3A3] hover:text-white transition-colors">
-          ← Back to FOREVER FITNESS Homepage
+          ← Back to LION FITNESS Homepage
         </Link>
       </div>
     </div>

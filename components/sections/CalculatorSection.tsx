@@ -56,7 +56,7 @@ export default function CalculatorSection() {
       return {
         plan: MEMBERSHIP_PLANS[1], // Pro
         matchScore: 95,
-        reasoning: "FOREVER PRO gives you full progressive workout plans, bi-weekly telemetry tracking, and coach guidance to sustain progressive overload.",
+        reasoning: "LION PRO gives you full progressive workout plans, bi-weekly performance tracking, and coach guidance to sustain progressive overload.",
         suggestedSchedule: `${frequency} upper/lower or push/pull/legs split`,
       };
     } else {
@@ -126,35 +126,35 @@ export default function CalculatorSection() {
             PERSONAL DETAILS & <span className="text-[#FF5500]">PLAN CALCULATOR.</span>
           </h2>
           <p className="text-xs sm:text-sm text-slate-300 mt-2">
-            Compute your baseline biometrics or determine your optimal FOREVER training membership tier.
+            Compute your baseline biometrics or determine your optimal LION training membership tier.
           </p>
 
           {/* Suite Tab Switcher */}
-          <div className="mt-8 inline-flex items-center p-1.5 rounded-2xl bg-[#0E121B] border border-white/[0.08] shadow-xl">
+          <div className="mt-8 inline-flex max-w-full items-center p-1 sm:p-1.5 rounded-2xl bg-[#0E121B] border border-white/[0.08] shadow-xl">
             <button
               type="button"
               onClick={() => setActiveSuiteTab("plan-matcher")}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                 activeSuiteTab === "plan-matcher"
                   ? "bg-gradient-to-r from-[#FF5500] to-[#FF3D00] text-white shadow-md shadow-[#FF5500]/25"
                   : "text-slate-400 hover:text-white"
               }`}
             >
-              <Target className="w-4 h-4" />
-              <span>AI Plan Matcher</span>
+              <Target className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FF5500]" />
+              <span>Plan Matcher</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveSuiteTab("bmi-screener")}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                 activeSuiteTab === "bmi-screener"
                   ? "bg-gradient-to-r from-[#FF5500] to-[#FF3D00] text-white shadow-md shadow-[#FF5500]/25"
                   : "text-slate-400 hover:text-white"
               }`}
             >
-              <Activity className="w-4 h-4" />
-              <span>Biometric BMI Screener</span>
+              <Activity className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FF5500]" />
+              <span>BMI Screener</span>
             </button>
           </div>
         </div>

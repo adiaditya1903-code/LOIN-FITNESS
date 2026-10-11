@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { MockDb, MemberProfile } from "@/lib/mock-db";
 import { formatINR } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
@@ -67,12 +68,18 @@ export default function MemberDashboard() {
       {/* Top Navbar */}
       <header className="sticky top-0 z-30 bg-[#07080A]/90 backdrop-blur-xl border-b border-white/[0.08] px-4 sm:px-8 py-3.5 flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#FF5500] to-[#FF3D00] flex items-center justify-center shadow-[0_0_15px_rgba(255,85,0,0.3)]">
-              <Dumbbell className="w-4 h-4 text-white rotate-45 stroke-[2.5]" />
+          <Link href="/" className="flex items-center gap-3">
+            <div className="relative w-9 h-9 rounded-full overflow-hidden border border-[#D4AF37] shadow-[0_0_12px_rgba(212,175,55,0.4)] flex-shrink-0 bg-black">
+              <Image
+                src="/lion-fitness-logo.jpg"
+                alt="Lion Fitness Logo"
+                fill
+                className="object-cover"
+                sizes="36px"
+              />
             </div>
             <span className="text-lg font-black tracking-wider text-white font-space">
-              FOREVER <span className="text-[#FF5500]">PORTAL</span>
+              LION <span className="text-[#FF5500]">PORTAL</span>
             </span>
           </Link>
           <span className="hidden sm:inline-block text-xs text-slate-400 font-mono">
@@ -509,7 +516,7 @@ export default function MemberDashboard() {
             <h4 className="text-base font-bold text-white">{member.fullName}</h4>
             <p className="text-xs text-[#FF5500] font-mono font-bold mt-0.5">{member.qrCodeToken}</p>
             <p className="text-xs text-slate-400 mt-2">
-              Valid at all Bagalkot turnstiles, lockers, and recovery spa suites.
+              Valid at all Bangalore turnstiles, lockers, and recovery spa suites.
             </p>
           </div>
         </div>
@@ -563,7 +570,7 @@ export default function MemberDashboard() {
       <Modal
         isOpen={renewModalOpen}
         onClose={() => setRenewModalOpen(false)}
-        title="EXTEND FOREVER PASS"
+        title="EXTEND LION PASS"
         maxWidth="md"
       >
         <div className="space-y-4 text-xs sm:text-sm text-slate-300">
